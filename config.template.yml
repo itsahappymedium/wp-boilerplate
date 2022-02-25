@@ -1,0 +1,53 @@
+.default: &default
+  application: {{WP_BOILERPLATE_SLUG}}
+  theme_name: '{{application}}'
+  repository: {{WP_BOILERPLATE_REPO}}
+  url: http://{{application}}.hmdev
+  wp_user: {{WP_BOILERPLATE_USER}}
+  wp_email: {{WP_BOILERPLATE_EMAIL}}
+  wp_site_url: http://{{application}}.hmdev/wordpress
+  wp_content_dir: content
+  deploy_path: {{WP_BOILERPLATE_DEPLOY_PATH}}
+  public_path: {{WP_BOILERPLATE_PUBLIC_PATH}}
+  database:
+    host: database
+    database: wp_{{WP_BOILERPLATE_SLUG}}
+    username: root
+    password: ''
+  wp_config_constants: &default_wp_config_constants
+    ENVIRONMENT: development
+
+staging-server:
+  <<: *default
+  stage: staging
+  branch: development
+  hostname: {{WP_BOILERPLATE_STAGING_IP}}
+  user: {{WP_BOILERPLATE_STAGING_USER}}
+  url: {{WP_BOILERPLATE_STAGING_URL}}
+  wp_site_url: {{WP_BOILERPLATE_STAGING_URL}}/wordpress
+  database:
+    host: localhost
+    database: wp_{{WP_BOILERPLATE_SLUG}}
+    username: {{WP_BOILERPLATE_STAGING_DB_USER}}
+    password: {{WP_BOILERPLATE_STAGING_DB_PASS}}
+  wp_config_constants:
+    <<: *default_wp_config_constants
+    ENVIRONMENT: staging
+
+production-server:
+  <<: *default
+  stage: production
+  branch: master
+  hostname: {{WP_BOILERPLATE_PRODUCTION_IP}}
+  user: {{WP_BOILERPLATE_PRODUCTION_USER}}
+  url: {{WP_BOILERPLATE_PRODUCTION_URL}}
+  wp_site_url: {{WP_BOILERPLATE_PRODUCTION_URL}}/wordpress
+  database:
+    host: localhost
+    database: wp_{{WP_BOILERPLATE_SLUG}}
+    username: {{WP_BOILERPLATE_PRODUCTION_DB_USER}}
+    password: {{WP_BOILERPLATE_PRODUCTION_DB_PASS}}
+  wp_config_constants:
+    <<: *default_wp_config_constants
+    ENVIRONMENT: production
+    GOOGLE_ANALYTICS_ID: {{WP_BOILERPLATE_GOOGLE_ANALYTICS_ID}}

@@ -1,0 +1,27 @@
+section, .section {
+  &:not(.bg-image) {
+    margin-bottom: 2rem;
+
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
+
+  &.bg-image {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+}
+
+.container {
+  margin: 0 1rem;
+
+  @include media('>=tablet') {
+    margin: 0 1.5rem;
+  }
+
+  @include media('>=1200px') {
+    margin: 0 auto;
+    max-width: 1160px;
+  }
+}

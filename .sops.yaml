@@ -1,0 +1,4 @@
+creation_rules:
+  - path_regex: (auth|config)(.encrypted)?\.(json|yml)$
+    age: {{WP_BOILERPLATE_SOPS_AGE}}
+    kms: {{WP_BOILERPLATE_SOPS_KMS}}

@@ -1,0 +1,170 @@
+header {
+  background-color: $pink;
+  color: $white;
+  padding: 1rem 0;
+
+  .container {
+    position: relative;
+  }
+
+  .header-left {
+    text-align: center;
+
+    @include media('>=tablet') {
+      text-align: left;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+
+    .logo {
+      vertical-align: middle;
+    }
+
+    .brand {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-left: .5rem;
+      vertical-align: middle;
+    }
+  }
+
+  .header-navigation {
+    @include media('<tablet') {
+      background: $white;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 8888;
+      overflow: hidden;
+      padding: 1rem;
+      text-align: center;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    @include media('>=tablet') {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: right;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      @include media('<tablet') {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @include media('>=tablet') {
+        &:after {
+          clear: both;
+          content: '';
+          display: block;
+        }
+      }
+
+      li {
+        @include media('<tablet') {
+          &:not(:last-of-type) {
+            margin-bottom: 1rem;
+          }
+
+          a {
+            color: $pink;
+            font-size: 2rem;
+            text-decoration: none;
+          }
+        }
+
+        @include media('>=tablet') {
+          float: left;
+
+          &:not(:last-of-type) {
+            margin-right: 1rem;
+          }
+
+          a {
+            color: $white;
+            font-size: 1rem;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .header-navigation-button {
+    background-color: $white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+
+    @include media('>=tablet') {
+      display: none;
+    }
+
+    &:before,
+    &:after,
+    span {
+      position: absolute;
+      top: 16.5px;
+      left: 25%;
+      right: 25%;
+      height: 2px;
+      background: $pink;
+      transition: all 0.2s linear;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      top: 11px;
+    }
+
+    &:after {
+      top: 21.5px;
+    }
+
+    &.open {
+      &:after,
+      &:before {
+        transform: rotate(45deg);
+        top: 1rem;
+        left: 25%;
+        right: 25%;
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+
+      span {
+        opacity: 0;
+      }
+    }
+  }
+}

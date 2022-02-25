@@ -1,0 +1,51 @@
+# Development
+######################
+/auth.json
+/config.yml
+/composer.lock
+/vendor
+/tmp
+
+# Logs and databases
+######################
+*.log
+*.sql
+*.sqlite
+/db_backups
+
+# OS generated files
+######################
+.DS_Store*
+ehthumbs.db
+#Icon?
+Thumbs.db
+
+# Wordpress files
+######################
+.htaccess
+xmlrpc.php
+sitemap.xml
+sitemap.xml.gz
+readme.html
+license.txt
+/content/backup/*
+/content/cache/*
+/content/plugins/*
+/content/uploads/*
+/content/upgrade/*
+!/content/plugins/index.php
+/wordpress
+/wp-config.php
+
+# Wordpress plugins
+######################
+/content/updraft/*
+/content/wfcache/*
+
+# Misc
+######################
+_assets
+node_modules
+ai-cache/*
+.sass-cache
+reate-dirs

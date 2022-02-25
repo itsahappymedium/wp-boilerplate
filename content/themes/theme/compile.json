@@ -1,0 +1,29 @@
+{
+  "compile": {
+    "css": {
+      "style.css": [
+        "scss/style.scss",
+        "scss/imports.scss"
+      ]
+    },
+    "js": {
+      "js/scripts.min.js": [
+        "js/src/*.js"
+      ]
+    }
+  },
+  "dependencies": {
+    "eduardoboucas/include-media": "1.4.10",
+    "wordpress/wordpress-core.css": "https://gist.github.com/kodie/d7da9f3db934adea8e44ee38d1885bf8/archive/aaf369827720c564ec3b6c43cba8b00748dbd73d.zip"
+  },
+  "settings": {
+    "fec": {
+      "remove-important-comments": "!scss/style.scss",
+      "scss-import-path": "gpm_modules",
+      "watcher": "/watcher.php"
+    },
+    "gpm": {
+      "ext": ["js", "css", "scss"]
+    }
+  }
+}

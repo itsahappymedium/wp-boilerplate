@@ -1,0 +1,17 @@
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.cf::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}

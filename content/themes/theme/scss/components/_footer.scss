@@ -1,0 +1,31 @@
+footer {
+  background-color: $pink;
+  color: $white;
+  padding: 1rem 0;
+  text-align: center;
+
+  a {
+    color: $white;
+  }
+
+  ul {
+    @extend .cf;
+
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+
+      &:not(:last-of-type) {
+        margin-right: .5rem;
+      }
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

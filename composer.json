@@ -1,0 +1,60 @@
+{
+  "name": "{{WP_BOILERPLATE_VENDOR}}/{{WP_BOILERPLATE_SLUG}}",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://itsahappymedium.com"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "johnpbloch/wordpress-core-installer": true
+    }
+  },
+  "extra": {
+    "wordpress-install-dir": "wordpress",
+    "installer-paths": {
+      "content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "content/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  },
+  "scripts": {
+    "build": [
+      "vendor/bin/fec --path content/themes/{{WP_BOILERPLATE_SLUG}}/compile.json"
+    ],
+    "post-install": [
+      "vendor/bin/gpm install --path content/themes/{{WP_BOILERPLATE_SLUG}}/compile.json"
+    ],
+    "encrypt": [
+      "sops -e auth.json > auth.encrypted.json",
+      "sops --input-type binary -e config.yml > config.encrypted.yml"
+    ],
+    "decrypt": [
+      "sops -d auth.encrypted.json > auth.json",
+      "sops --output-type binary -d config.encrypted.yml > config.yml"
+    ]
+  },
+  "require": {
+    "php": ">=8.0",
+    "johnpbloch/wordpress": "5.9.1",
+    "itsahappymedium/advanced-custom-fields-pro": "5.0.3",
+    "itsahappymedium/gravityforms": "2.5.15.1",
+    "wpackagist-plugin/ajax-thumbnail-rebuild": "1.13",
+    "wpackagist-plugin/google-analytics-for-wordpress": "8.3.4",
+    "wpackagist-plugin/svg-support": "2.4.2",
+    "wpackagist-plugin/updraftplus": "1.22.4",
+    "wpackagist-plugin/user-role-editor": "4.61.1",
+    "wpackagist-plugin/what-the-file": "1.5.4",
+    "wpackagist-plugin/wordpress-seo": "18.2"
+  },
+  "require-dev": {
+    "itsahappymedium/fec": "^0.2.0",
+    "itsahappymedium/gpm": "^0.1.0",
+    "itsahappymedium/wp-deployer": "^0.1.0"
+  }
+}

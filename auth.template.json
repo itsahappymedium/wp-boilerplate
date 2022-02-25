@@ -1,0 +1,12 @@
+{
+  "http-basic": {
+    "itsahappymedium.com": {
+      "username": "",
+      "password": ""
+    },
+    "kodehappy.com": {
+      "username": "",
+      "password": ""
+    }
+  }
+}
