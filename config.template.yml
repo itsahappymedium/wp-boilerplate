@@ -37,7 +37,7 @@ staging-server:
 production-server:
   <<: *default
   stage: production
-  branch: master
+  branch: main
   hostname: {{WP_BOILERPLATE_PRODUCTION_IP}}
   user: {{WP_BOILERPLATE_PRODUCTION_USER}}
   url: {{WP_BOILERPLATE_PRODUCTION_URL}}

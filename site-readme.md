@@ -54,7 +54,7 @@ Password: (Blank)
 
 The deploy script will set up the remote environment with the following file structure:
 
-*`public_path` and `deploy_path` can be configured in `hosts.yml`.*
+*`public_path` and `deploy_path` can be configured in `config.yml`.*
 
 ```
 {{public_path}} - The publicly viewable directory. This will get symlinked to the current release.
