@@ -2,12 +2,23 @@
 
 ## Development
 
-To work on this website, you will need [Lando] installed on your machine. Then follow these steps:
+
+### Requirements
+
+- [Lando] - `brew install --cask lando`
+- [Dnsmasq] - `brew install dnsmasq`
+- [SOPS] - `brew install sops`
+- [PHP] - `brew install php@8.0`
+- [Composer] - `brew install composer`
+
+
+### Setup
 
 1. Clone this repo
 2. Run `composer run decrypt` to decrypt the config files
 3. Run `lando start` to get the website's dependencies installed and the app started up
 4. Run `lando dep setup:init staging` to configure the website, compile theme files, and pull down the database and uploads. (Replace `staging` with `production` to pull down database and uploads from prod.)
+
 
 ### Commands
 
@@ -35,9 +46,11 @@ This website uses [Lando] for a development environment and [WordPress Deployer]
 
 (Append `-vvv` to any of the above commands to get the full output.)
 
+
 ### Local URL
 
 For the .hmdev domain proxy to work, you will need to have dnsmasq set up for the hmdev TLD. Documentation on how to do so is located in Lando's [Developing offline] documentation.
+
 
 ### External Database Connection
 
@@ -49,6 +62,7 @@ Port: (Different every time you run the app)
 Username: root
 Password: (Blank)
 ```
+
 
 ## Server Environment
 
@@ -65,6 +79,7 @@ The deploy script will set up the remote environment with the following file str
 {{deploy_path}}/shared - Where files that are shared between releases are stored such as uploads, wp-config.php, and .htaccess.
 ```
 
+
 ### Deploying to a server for the first time
 
 To get the site up and running on a new server, you will want to make sure that the information for that specific stage is defined in `hosts.yml`. You can then run the following commands in order:
@@ -80,9 +95,11 @@ lando dep uploads:push [stage]
 
 [Composer]: https://getcomposer.org/doc
 [Developing offline]: https://docs.lando.dev/guides/offline-dev.html
+[Dnsmasq]: https://thekelleys.org.uk/dnsmasq/doc.html
 [Front End Compiler]: https://github.com/itsahappymedium/fec
 [Git Package Manager]: https://github.com/itsahappymedium/gpm
 [Lando]: https://lando.dev
+[PHP]: https://php.net
 [Sequel Pro]: https://sequelpro.com
 [SOPS]: https://github.com/mozilla/sops
 [SSH agent]: https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
