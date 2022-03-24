@@ -31,13 +31,15 @@ function arrval($arr, $key, $default = null) {
 
 // Checks if $arg is is set in a template's $args variable, otherwise
 // attempt to get it from an ACF field, and if all else fails, return $default
-function get_template_arg($arg, $default = null) {
-  global $args;
-
+function get_template_arg($arg, $default = null, $args = array()) {
   $value = arrval($args, $arg);
 
   if (!$value && function_exists('get_field')) {
     $value = get_field($arg);
+  }
+
+  if (!$value && function_exists('get_sub_field')) {
+    $value = get_sub_field($arg);
   }
 
   if ($value) return $value;
