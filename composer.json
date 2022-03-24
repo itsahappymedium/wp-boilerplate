@@ -42,8 +42,8 @@
   "require": {
     "php": ">=8.0",
     "johnpbloch/wordpress": "5.9.1",
-    "itsahappymedium/advanced-custom-fields-pro": "5.0.3",
-    "itsahappymedium/gravityforms": "2.5.15.1",
+    "itsahappymedium/advanced-custom-fields-pro": "5.12",
+    "itsahappymedium/gravityforms": "2.5.16.3",
     "wpackagist-plugin/ajax-thumbnail-rebuild": "1.13",
     "wpackagist-plugin/google-analytics-for-wordpress": "8.3.4",
     "wpackagist-plugin/svg-support": "2.4.2",
