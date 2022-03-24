@@ -62,6 +62,17 @@ if (basename(dirname(__FILE__)) === 'wp-boilerplate') {
   exit;
 }
 
+function remove_directory($path) {
+  $files = glob(preg_replace('/(\*|\?|\[)/', '[$1]', $path) . '/{,.}*', GLOB_BRACE);
+
+  foreach ($files as $file) {
+    if ($file == $path . '/.' || $file == $path . '/..') continue;
+    is_dir($file) ? remove_directory($file) : unlink($file);
+  }
+
+  rmdir($path);
+}
+
 foreach($vars as $var => &$value) {
   if (!($default = getenv($var))) {
     if (isset($var_defaults[$var])) {
@@ -104,7 +115,7 @@ foreach($file_delete_list as $file_path) {
 
     try {
       if (is_dir($file_path)) {
-        rmdir($file_path);
+        remove_directory($file_path);
       } else {
         unlink($file_path);
       }
