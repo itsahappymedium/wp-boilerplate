@@ -4,6 +4,8 @@ $vars = array(
   'WP_BOILERPLATE_VENDOR'                   => 'vendor name',
   'WP_BOILERPLATE_USER'                     => 'admin username',
   'WP_BOILERPLATE_EMAIL'                    => 'admin email address',
+  'WP_BOILERPLATE_MAIL_FROM'                => 'email address to send emails from',
+  'WP_BOILERPLATE_MAIL_FROM_NAME'           => 'name to send emails from',
   'WP_BOILERPLATE_REPO'                     => 'git repository URL',
   'WP_BOILERPLATE_DEPLOY_PATH'              => 'server deploy path',
   'WP_BOILERPLATE_PUBLIC_PATH'              => 'server public path',
@@ -26,6 +28,8 @@ $var_defaults = array(
   'WP_BOILERPLATE_SLUG'                     => 'my-new-website',
   'WP_BOILERPLATE_VENDOR'                   => 'my-company',
   'WP_BOILERPLATE_USER'                     => 'admin',
+  'WP_BOILERPLATE_MAIL_FROM'                => '{{WP_BOILERPLATE_EMAIL}}',
+  'WP_BOILERPLATE_MAIL_FROM_NAME'           => '{{WP_BOILERPLATE_SLUG}}',
   'WP_BOILERPLATE_DEPLOY_PATH'              => '/var/www/public_html',
   'WP_BOILERPLATE_PUBLIC_PATH'              => '/var/www/public',
   'WP_BOILERPLATE_STAGING_USER'             => 'www-data',
@@ -62,6 +66,16 @@ if (basename(dirname(__FILE__)) === 'wp-boilerplate') {
   exit;
 }
 
+function parse_vars($str) {
+  global $vars;
+
+  foreach($vars as $var => $value) {
+    $str = str_replace('{{' . $var . '}}', $value, $str);
+  }
+
+  return $str;
+}
+
 function remove_directory($path) {
   $files = glob(preg_replace('/(\*|\?|\[)/', '[$1]', $path) . '/{,.}*', GLOB_BRACE);
 
@@ -76,7 +90,7 @@ function remove_directory($path) {
 foreach($vars as $var => &$value) {
   if (!($default = getenv($var))) {
     if (isset($var_defaults[$var])) {
-      $default = $var_defaults[$var];
+      $default = parse_vars($var_defaults[$var]);
     } else {
       $default = '';
     }
@@ -94,12 +108,7 @@ foreach($file_list as $file_path) {
     echo "Processing $file_path...\n";
 
     try {
-      $file_contents = file_get_contents($file_path);
-
-      foreach($vars as $var => $value) {
-        $file_contents = str_replace('{{' . $var . '}}', $value, $file_contents);
-      }
-
+      $file_contents = parse_vars(file_get_contents($file_path));
       file_put_contents($file_path, $file_contents);
     } catch (Exception $e) {
       echo "Error: " . $e->getMessage() . "\n";
@@ -129,9 +138,7 @@ foreach($file_delete_list as $file_path) {
 
 foreach($file_rename_list as $file_path => $new_name) {
   if (file_exists($file_path)) {
-    foreach($vars as $var => $value) {
-      $new_name = str_replace('{{' . $var . '}}', $value, $new_name);
-    }
+    $new_name = parse_vars($new_name);
 
     echo "Renaming $file_path to $new_name...\n";
 

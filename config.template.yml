@@ -16,6 +16,8 @@
     password: ''
   wp_config_constants: &default_wp_config_constants
     ENVIRONMENT: development
+    WP_MAIL_FROM: {{WP_BOILERPLATE_MAIL_FROM}}
+    WP_MAIL_FROM_NAME: {{WP_BOILERPLATE_MAIL_FROM_NAME}}
 
 staging-server:
   <<: *default

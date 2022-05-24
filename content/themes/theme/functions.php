@@ -46,3 +46,49 @@ function get_template_arg($arg, $default = null, $args = array()) {
 
   return $default;
 }
+
+
+// Changes the email address that emails are sent from
+add_filter('wp_mail_from', 'hm_mail_from');
+function hm_mail_from($from_email) {
+  if (defined('WP_MAIL_FROM') && !empty(WP_MAIL_FROM)) {
+    return WP_MAIL_FROM;
+  }
+
+  return $from_email;
+}
+
+// Changes the name that emails are sent from
+add_filter('wp_mail_from_name', 'hm_mail_from_name');
+function hm_mail_from_name($from_name) {
+  if (defined('WP_MAIL_FROM_NAME') && !empty(WP_MAIL_FROM_NAME)) {
+    return WP_MAIL_FROM_NAME;
+  }
+  
+  return $from_name;
+}
+
+
+// Filter Yoast SEO Metabox Priority
+add_filter('wpseo_metabox_prio', 'hm_filter_yoast_seo_metabox');
+function hm_filter_yoast_seo_metabox() {
+  return 'low';
+}
+
+
+// Google Analytics
+add_action('wp_head', 'hm_google_analytics_tracking_code');
+function hm_google_analytics_tracking_code() {
+  if (defined('GOOGLE_ANALYTICS_ID') && !empty(GOOGLE_ANALYTICS_ID)):
+?>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?=GOOGLE_ANALYTICS_ID?>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag () { dataLayer.push(arguments) }
+    gtag('js', new Date())
+    gtag('config', '<?=GOOGLE_ANALYTICS_ID?>')
+  </script>
+<?php
+  endif;
+}
