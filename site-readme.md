@@ -20,9 +20,14 @@
 4. Run `lando dep setup:init staging` to configure the website, compile theme files, and pull down the database and uploads. (Replace `staging` with `production` to pull down database and uploads from prod.)
 
 
+#### Local URL
+
+This website should be available at [http://{{WP_BOILERPLATE_SLUG}}.hmdev](http://{{WP_BOILERPLATE_SLUG}}.hmdev). In order for that to work you will need to have [Dnsmasq] installed and configured. See Lando's [Developing offline] documentation for some help on how to do that. Additionally, to get the HTTPS version of the local website working, see Lando's [Trusting the CA] documentation.
+
+
 ### Commands
 
-This website uses [Lando] for a development environment and [WordPress Deployer] for a deployment tool. You can always run `lando` or `lando dep` to see what commands are available to you, however these are probably the ones you'll use the most:
+[Lando] is used for the development environment and [WordPress Deployer] is used for deployment. You can always run `lando` or `lando dep` to see what commands are available to you, however these are probably the ones you'll use the most:
 
 (You'll need an [SSH agent] running on your machine to use any Deployer commands.)
 
@@ -45,11 +50,6 @@ This website uses [Lando] for a development environment and [WordPress Deployer]
 | `composer run [encrypt/decrypt]`                     | Encrypts/decrypts config files using [SOPS]. You should run this if you make any changes to `auth.json` or `config.yml`                                                 |
 
 (Append `-vvv` to any of the above commands to get the full output.)
-
-
-### Local URL
-
-For the .hmdev domain proxy to work, you will need to have dnsmasq set up for the hmdev TLD. Documentation on how to do so is located in Lando's [Developing offline] documentation.
 
 
 ### External Database Connection
@@ -82,7 +82,7 @@ The deploy script will set up the remote environment with the following file str
 
 ### Deploying to a server for the first time
 
-To get the site up and running on a new server, you will want to make sure that the information for that specific stage is defined in `hosts.yml`. You can then run the following commands in order:
+To get the site up and running on a new server, you will want to make sure that the information for that specific stage is defined in `config.yml`. You can then run the following commands in order:
 
 ```
 lando build
@@ -103,5 +103,6 @@ lando dep uploads:push [stage]
 [Sequel Pro]: https://sequelpro.com
 [SOPS]: https://github.com/mozilla/sops
 [SSH agent]: https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+[Trusting the CA]: https://docs.lando.dev/config/security.html#trusting-the-ca
 [WordPress Deployer]: https://github.com/itsahappymedium/wp-deployer
 [WP-CLI]: https://developer.wordpress.org/cli/commands
