@@ -12,6 +12,13 @@
 - [Composer] - `brew install composer`
 
 
+#### Additional Requirements
+
+- [Dnsmasq] configured to allow the website to be accessed locally via a custom URL (See [Local URL](#local-url) section for more info)
+- [SOPS] configured and your account added to this project in [AWS KMS] in order to decrypt configuration files
+- Your SSH key added to the staging and production servers as well as an [SSH agent] running in order to deploy
+
+
 ### Setup
 
 1. Clone this repo
@@ -28,8 +35,6 @@ This website should be available at [http://{{WP_BOILERPLATE_SLUG}}.hmdev](http:
 ### Commands
 
 [Lando] is used for the development environment and [WordPress Deployer] is used for deployment. You can always run `lando` or `lando dep` to see what commands are available to you, however these are probably the ones you'll use the most:
-
-(You'll need an [SSH agent] running on your machine to use any Deployer commands.)
 
 | Command                                              | Description                                                                                                                                                             |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -93,6 +98,7 @@ lando dep uploads:push [stage]
 ```
 
 
+[AWS KMS]: https://aws.amazon.com/kms
 [Composer]: https://getcomposer.org/doc
 [Developing offline]: https://docs.lando.dev/guides/offline-dev.html
 [Dnsmasq]: https://thekelleys.org.uk/dnsmasq/doc.html
