@@ -1,6 +1,6 @@
 <?php
-$field_name = arrval($args, 'field_name', 'flex_sections');
-$post_id = arrval($args, 'post_id', false);
+$field_name = arrval($args, 'flex_field_name', 'flex_sections');
+$post_id = arrval($args, 'flex_post_id', false);
 
 if (function_exists('have_rows') && have_rows($field_name, $post_id)) {
   while (have_rows($field_name, $post_id)) {
