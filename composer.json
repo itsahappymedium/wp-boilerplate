@@ -8,6 +8,10 @@
     {
       "type": "composer",
       "url": "https://itsahappymedium.com"
+    },
+    {
+      "type": "composer",
+      "url": "https://kodehappy.com"
     }
   ],
   "config": {
@@ -41,20 +45,20 @@
   },
   "require": {
     "php": ">=8.0",
-    "johnpbloch/wordpress": "6.0.3",
-    "itsahappymedium/advanced-custom-fields-pro": "6.0.3",
-    "itsahappymedium/gravityforms": "2.6.7",
+    "johnpbloch/wordpress": "6.1.1",
+    "itsahappymedium/advanced-custom-fields-pro": "6.0.5",
+    "itsahappymedium/gravityforms": "2.6.8",
+    "kodehappy/manualpress": "0.0.6",
     "wpackagist-plugin/ajax-thumbnail-rebuild": "1.13",
-    "wpackagist-plugin/google-analytics-for-wordpress": "8.9.1",
-    "wpackagist-plugin/svg-support": "2.5.1",
+    "wpackagist-plugin/google-analytics-for-wordpress": "8.10.1",
+    "wpackagist-plugin/svg-support": "2.5.4",
     "wpackagist-plugin/updraftplus": "1.22.23",
     "wpackagist-plugin/user-role-editor": "4.63.1",
-    "wpackagist-plugin/what-the-file": "1.6.0",
-    "wpackagist-plugin/wordpress-seo": "18.8"
+    "wpackagist-plugin/wordpress-seo": "19.11"
   },
   "require-dev": {
     "itsahappymedium/fec": "^0.2.0",
-    "itsahappymedium/gpm": "^0.1.0",
+    "itsahappymedium/gpm": "^0.1.1",
     "itsahappymedium/wp-deployer": "^0.1.1"
   }
 }
