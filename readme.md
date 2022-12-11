@@ -67,7 +67,7 @@ Also look at `.lando.yml` and make any needed changes like PHP and MySQL version
 
 While you're at it, make any needed changes to `composer.json`. For example, if you're not a [Happy Medium] developer or a [KodeHappy] customer then you won't have access to those package repositories, so remove them from the `repositories` section as well as any non-public packages from those repositories listed in the `require` section.
 
-At Happy Medium we use a private repository to distribute any premium plugins we use such as [Advanced Custom Fields Pro] and [Gravity Forms] (keep a lookout for the release of our new plugin that we use to distribute these :wink:), so if you are a Happy Medium developer or KodeHappy customer, be sure to enter your access keys in `auth.json`.
+At Happy Medium we use a private repository to distribute any premium plugins we use such as [Advanced Custom Fields Pro] and [Gravity Forms], so if you are a Happy Medium developer or KodeHappy customer, be sure to enter your access keys in `auth.json`.
 
 
 ### Step 4
