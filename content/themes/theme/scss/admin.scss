@@ -1,0 +1,21 @@
+@import "admin/acf";
+@import "admin/user-edit";
+
+
+// Hides user avatars from the admin bar and the users table
+#wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img,
+#wpadminbar #wp-admin-bar-user-info .avatar,
+.wp-list-table.users .column-username img.avatar {
+  display: none;
+}
+
+// Removes the gap in the "my account" dropdown in the admin bar as a result of us hiding the avatar
+#wpadminbar #wp-admin-bar-my-account.with-avatar #wp-admin-bar-user-actions > li {
+  margin-left: 0;
+}
+
+
+// Flex sections column width on pages table
+.fixed .column-flex-sections {
+  width: 10%;
+}

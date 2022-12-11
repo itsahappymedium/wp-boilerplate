@@ -1,0 +1,34 @@
+// Hides unused fields from the user edit screen
+$hidden_user_profile_fields: (
+  'admin-color',
+  'comment-shortcuts',
+  'description',
+  'syntax-highlighting',
+  'url'
+);
+@each $field in $hidden_user_profile_fields {
+  #profile-page tr.user-#{$field}-wrap {
+    display: none;
+  }
+}
+
+// Hides the "Profile Picture" section from the user edit screen
+#profile-page .user-profile-picture {
+  display: none;
+}
+
+// Hides the "About the user" heading from the user edit screen
+// (You may need to change the number 4 to something else depending on what other sections have been added to this screen)
+#profile-page #your-profile h2:nth-of-type(4) {
+  display: none;
+}
+
+// Hides the "Application Passwords" section from the user edit screen
+#profile-page .application-passwords {
+  display: none;
+}
+
+// Hides the "Yoast SEO settings" section from the user edit screen
+#profile-page .yoast {
+  display: none;
+}

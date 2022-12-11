@@ -1,6 +1,7 @@
 {
   "compile": {
     "css": {
+      "admin.css": "scss/admin.scss",
       "style.css": [
         "scss/style.scss",
         "scss/imports.scss"

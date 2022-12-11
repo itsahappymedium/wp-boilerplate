@@ -15,7 +15,7 @@
     username: root
     password: ''
   wp_config_constants: &default_wp_config_constants
-    ENVIRONMENT: development
+    WP_ENVIRONMENT_TYPE: development
     WP_MAIL_FROM: {{WP_BOILERPLATE_MAIL_FROM}}
     WP_MAIL_FROM_NAME: {{WP_BOILERPLATE_MAIL_FROM_NAME}}
 
@@ -34,7 +34,7 @@ staging-server:
     password: {{WP_BOILERPLATE_STAGING_DB_PASS}}
   wp_config_constants:
     <<: *default_wp_config_constants
-    ENVIRONMENT: staging
+    WP_ENVIRONMENT_TYPE: staging
 
 production-server:
   <<: *default
@@ -51,5 +51,5 @@ production-server:
     password: {{WP_BOILERPLATE_PRODUCTION_DB_PASS}}
   wp_config_constants:
     <<: *default_wp_config_constants
-    ENVIRONMENT: production
+    WP_ENVIRONMENT_TYPE: production
     GOOGLE_ANALYTICS_ID: {{WP_BOILERPLATE_GOOGLE_ANALYTICS_ID}}

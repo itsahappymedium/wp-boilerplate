@@ -51,4 +51,11 @@ function hm_disable_comments_admin_bar() {
     remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
   }
 }
+
+// Remove comments item from admin bar
+add_action('wp_before_admin_bar_render', 'hm_disable_comments_item_admin_bar');
+function hm_disable_comments_item_admin_bar() {
+  global $wp_admin_bar;
+  $wp_admin_bar->remove_menu('comments');
+}
 ?>

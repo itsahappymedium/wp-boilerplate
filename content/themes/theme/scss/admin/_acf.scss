@@ -1,0 +1,81 @@
+// ACF "horizontal-repeater" and "horizontal-repeater-3-col" classes, display repeaters in horizontal columns
+// Originally found here but modified: https://support.advancedcustomfields.com/forums/topic/show-repeater-fields-horizontal-next-to-each-other/
+.acf-field.acf-field-repeater.horizontal-repeater {
+  tbody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  tr.acf-row:not(.acf-clone) {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 21%; /* 21% because 25% gives CSS bugs when content pushes width and not 20 because we want the max to be 4 */
+    border-bottom: 1px solid #eee;
+
+    td.acf-fields {
+      width: 100% !important; /* important is necessary because it gets overwritten on drag&drop  */
+    }
+  }
+
+  &.horizontal-repeater-3-col {
+    tr.acf-row:not(.acf-clone) {
+      flex-basis: 28%;
+    }
+  }
+
+  .acf-row-handle,
+  .acf-fields {
+    border-width: 0px 0px 0px 1px;
+  }
+
+  .acf-row-handle.order {
+    min-width: 10px; /* to stop breaking layout if we keep the max rows bellow 10 */
+  }
+
+  .acf-row:last-child .acf-row-handle {
+    border-width: 0px;
+  }
+
+  .acf-row-handle .acf-icon {
+    position: relative;
+    margin: 10px 0;
+  }
+
+  .acf-row:hover .acf-row-handle .acf-icon {
+    display: none; /* remove standard annoying hover */
+  }
+
+  .acf-row-handle.remove:hover .acf-icon {
+    display: block; /* re-apply hover on set block */
+  }
+}
+
+
+// ACF "small-wysiwyg-editor" and "medium-wysiwyg-editor" classes, makes the wysiwyg field shorter in height
+.acf-field.acf-field-wysiwyg {
+  &.small-wysiwyg-editor {
+    iframe, textarea {
+      min-height: 100px;
+      max-height: 100px;
+      resize: none;
+    }
+  }
+
+  &.medium-wysiwyg-editor {
+    iframe, textarea {
+      min-height: 200px;
+      max-height: 200px;
+      resize: none;
+    }
+  }
+}
+
+
+// ACF "small-textarea" class, makes the textarea field shorter in height
+.acf-field.acf-field-textarea {
+  &.small-textarea textarea {
+    height: 100px;
+  }
+}

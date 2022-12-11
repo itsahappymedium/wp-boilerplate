@@ -4,10 +4,12 @@ define('THEME_PATH', get_template_directory());
 define('IMAGES', THEME_URL . '/img');
 
 
-require_once(THEME_PATH . '/lib/acf.php');
-require_once(THEME_PATH . '/lib/comments.php');
-require_once(THEME_PATH . '/lib/roles.php');
-require_once(THEME_PATH . '/lib/theme.php');
+require_once(THEME_PATH . '/inc/acf.php');
+require_once(THEME_PATH . '/inc/comments.php');
+require_once(THEME_PATH . '/inc/cpt.php');
+require_once(THEME_PATH . '/inc/roles.php');
+require_once(THEME_PATH . '/inc/taxonomies.php');
+require_once(THEME_PATH . '/inc/theme.php');
 
 
 // A wrapper for error_log() that will run arrays and objects through print_r()
@@ -29,22 +31,27 @@ function arrval($arr, $key, $default = null) {
 }
 
 
-// Checks if $arg is is set in a template's $args variable, otherwise
-// attempt to get it from an ACF field, and if all else fails, return $default
-function get_template_arg($arg, $default = null, $args = array()) {
-  $value = arrval($args, $arg);
+// Returns the contents of an SVG file or an IMG tag with the src set to the file path
+function get_svg($svg, $class = null, $alt = null, $get_contents = false, $echo = false) {
+  $file = '/img/svg/' . $svg . '.svg';
+  $file_path = get_stylesheet_directory() . $file;
+  $file_url = get_stylesheet_directory_uri() . $file;
+  $response = false;
 
-  if (!$value && function_exists('get_field')) {
-    $value = get_field($arg);
+  if (!$class) $class = '';
+  $class = trim($svg . ' ' . $class);
+
+  if (file_exists($file_path)) {
+    if ($get_contents) {
+      $response = file_get_contents($file_path);
+    } else {
+      $response = "<img src='$file_url' class='style-svg $class' alt='$alt' />";
+    }
+
+    if ($echo) echo $response;
   }
 
-  if (!$value && function_exists('get_sub_field')) {
-    $value = get_sub_field($arg);
-  }
-
-  if ($value) return $value;
-
-  return $default;
+  return $response;
 }
 
 
@@ -80,14 +87,18 @@ function hm_filter_yoast_seo_metabox() {
 add_action('wp_head', 'hm_google_analytics_tracking_code');
 function hm_google_analytics_tracking_code() {
   if (defined('GOOGLE_ANALYTICS_ID') && !empty(GOOGLE_ANALYTICS_ID)):
+    $google_analytics_ids = (array) GOOGLE_ANALYTICS_ID;
 ?>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<?=GOOGLE_ANALYTICS_ID?>"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?=$google_analytics_ids[0]?>"></script>
   <script>
     window.dataLayer = window.dataLayer || []
     function gtag () { dataLayer.push(arguments) }
     gtag('js', new Date())
-    gtag('config', '<?=GOOGLE_ANALYTICS_ID?>')
+
+    <?php foreach($google_analytics_ids as $google_analytics_id): ?>
+      gtag('config', '<?=$google_analytics_id?>')
+    <?php endforeach; ?>
   </script>
 <?php
   endif;
