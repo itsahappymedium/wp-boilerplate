@@ -2,7 +2,7 @@ name: {{WP_BOILERPLATE_SLUG}}
 recipe: lamp
 config:
   php: '8.1' # CONFIG: PHP VERSION
-  composer_version: '2.4.4' # CONFIG: COMPOSER VERSION
+  composer_version: '2.1.8' # CONFIG: COMPOSER VERSION
   database: mysql:5.7 # CONFIG: MYSQL VERSION
 proxy:
   appserver:
