@@ -162,16 +162,6 @@ function hm_remove_monsterinsights_metabox() {
 }
 
 
-// Sets the default dashboard color scheme for new users
-add_action('user_register', 'set_default_admin_color_scheme');
-function set_default_admin_color_scheme($user_id) {
-  wp_update_user(array(
-    'ID'          => $user_id,
-    'admin_color' => 'light'
-  ));
-}
-
-
 // Removes unused contact method fields from the user edit screen
 add_filter('user_contactmethods', 'remove_unused_user_contactmethods', 99);
 function remove_unused_user_contactmethods($methods) {
