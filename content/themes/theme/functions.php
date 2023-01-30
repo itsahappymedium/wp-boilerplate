@@ -76,6 +76,14 @@ function hm_mail_from_name($from_name) {
 }
 
 
+// Prevent Updraft Plus from creating backups from non-production environments
+add_filter('updraftplus_boot_backup', 'hm_prevent_non_prod_backups');
+function hm_prevent_non_prod_backups($do_backup) {
+  if (wp_get_environment_type() !== 'production') return false;
+  return $do_backup;
+}
+
+
 // Filter Yoast SEO Metabox Priority
 add_filter('wpseo_metabox_prio', 'hm_filter_yoast_seo_metabox');
 function hm_filter_yoast_seo_metabox() {
