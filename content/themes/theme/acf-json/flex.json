@@ -1,0 +1,44 @@
+{
+  "key": "flex",
+  "title": "Flex Sections",
+  "fields": [
+      {
+          "key": "flex_sections_field",
+          "label": "Flex Sections",
+          "name": "flex_sections",
+          "aria-label": "",
+          "type": "flexible_content",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+          },
+          "layouts": {},
+          "min": "",
+          "max": "",
+          "button_label": "Add Flex Section"
+      }
+  ],
+  "location": [
+      [
+          {
+              "param": "post_type",
+              "operator": "==",
+              "value": "page"
+          }
+      ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1696361206
+}

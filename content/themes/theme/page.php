@@ -10,6 +10,6 @@
   </div>
 </section>
 
-<?php get_template_part('parts/flex'); ?>
+<?php get_template_part('flex/flex'); ?>
 
 <?php get_footer(); ?>
