@@ -55,24 +55,38 @@ function get_svg($svg, $class = null, $alt = null, $get_contents = false, $echo 
 }
 
 
-// Changes the email address that emails are sent from
-add_filter('wp_mail_from', 'hm_mail_from');
-function hm_mail_from($from_email) {
-  if (defined('WP_MAIL_FROM') && !empty(WP_MAIL_FROM)) {
-    return WP_MAIL_FROM;
+// Allows emails sent to specific addresses to always send regardless if WPMS_DO_NOT_SEND is enabled or not in non-production environments
+add_filter('wp_mail', 'hm_wpmsmtp_always_send');
+function hm_wpmsmtp_always_send($args) {
+  if (wp_get_environment_type() !== 'production') {
+    $domain_whitelist = WP_MAIL_SEND_DOMAIN_WHITELIST;
+    $email_whitelist = WP_MAIL_SEND_EMAIL_WHITELIST;
+
+    $to = is_array($args['to']) ? $args['to'] : explode(',', $args['to']);
+
+    $to_filtered = array_filter($to, function($email) use($domain_whitelist, $email_whitelist) {
+      list($handle, $domain) = explode('@', $email, 2);
+      return in_array($domain, $domain_whitelist) || in_array($email, $email_whitelist);
+    });
+
+    if (!empty($to_filtered)) {
+      $test_header = 'X-Mailer-Type:WPMailSMTP/Admin/Test';
+
+      if (count($to) !== count($to_filtered)) {
+        $args['to'] = $to_filtered;
+      }
+
+      if (!is_array($args['headers'])) {
+        $args['headers'] = explode("\n", str_replace("\r\n", "\n", $args['headers']));
+      }
+
+      if (!in_array($test_header, $args['headers'])) {
+        $args['headers'][] = $test_header;
+      }
+    }
   }
 
-  return $from_email;
-}
-
-// Changes the name that emails are sent from
-add_filter('wp_mail_from_name', 'hm_mail_from_name');
-function hm_mail_from_name($from_name) {
-  if (defined('WP_MAIL_FROM_NAME') && !empty(WP_MAIL_FROM_NAME)) {
-    return WP_MAIL_FROM_NAME;
-  }
-  
-  return $from_name;
+  return $args;
 }
 
 

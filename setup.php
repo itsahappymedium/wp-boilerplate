@@ -17,11 +17,13 @@ $vars = array(
   'WP_BOILERPLATE_PRODUCTION_IP'            => 'production server IP address',
   'WP_BOILERPLATE_PRODUCTION_USER'          => 'production server user',
   'WP_BOILERPLATE_PRODUCTION_URL'           => 'production website URL',
+  'WP_BOILERPLATE_PRODUCTION_DOMAIN'        => 'production website domain',
   'WP_BOILERPLATE_PRODUCTION_DB_USER'       => 'production website database user',
   'WP_BOILERPLATE_PRODUCTION_DB_PASS'       => 'production website database password',
   'WP_BOILERPLATE_SOPS_AGE'                 => 'SOPS AGE public key',
   'WP_BOILERPLATE_SOPS_KMS'                 => 'SOPS KMS value',
-  'WP_BOILERPLATE_GOOGLE_ANALYTICS_ID'      => 'Google Analytics Property ID'
+  'WP_BOILERPLATE_GOOGLE_ANALYTICS_ID'      => 'Google Analytics Property ID',
+  'WP_BOILERPLATE_SENDGRID_API_KEY'         => 'SendGrid API key'
 );
 
 $var_defaults = array(

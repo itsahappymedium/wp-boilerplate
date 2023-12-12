@@ -16,8 +16,21 @@
     password: ''
   wp_config_constants: &default_wp_config_constants
     WP_ENVIRONMENT_TYPE: development
-    WP_MAIL_FROM: {{WP_BOILERPLATE_MAIL_FROM}}
-    WP_MAIL_FROM_NAME: {{WP_BOILERPLATE_MAIL_FROM_NAME}}
+    WP_AUTO_UPDATE_CORE: false
+    WPMS_ON: true
+    WPMS_DO_NOT_SEND: true
+    WPMS_MAIL_FROM: {{WP_BOILERPLATE_MAIL_FROM}}
+    WPMS_MAIL_FROM_FORCE: true
+    WPMS_MAIL_FROM_NAME: '{{WP_BOILERPLATE_MAIL_FROM_NAME}}'
+    WPMS_MAIL_FROM_NAME_FORCE: true
+    WPMS_MAILER: sendgrid
+    WPMS_SENDGRID_API_KEY: {{WP_BOILERPLATE_SENDGRID_API_KEY}}
+    WPMS_SENDGRID_DOMAIN: {{WP_BOILERPLATE_PRODUCTION_DOMAIN}}
+    WPMS_LOGS_ENABLED: true
+    WPMS_LOGS_LOG_EMAIL_CONTENT: true
+    WP_MAIL_SEND_DOMAIN_WHITELIST:
+      - itsahappymedium.com
+    WP_MAIL_SEND_EMAIL_WHITELIST: []
 
 staging-server:
   <<: *default
@@ -53,3 +66,6 @@ production-server:
     <<: *default_wp_config_constants
     WP_ENVIRONMENT_TYPE: production
     GOOGLE_ANALYTICS_ID: {{WP_BOILERPLATE_GOOGLE_ANALYTICS_ID}}
+    WPMS_DO_NOT_SEND: false
+    WPMS_LOGS_ENABLED: false
+    WPMS_LOGS_LOG_EMAIL_CONTENT: false

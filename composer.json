@@ -45,20 +45,21 @@
   },
   "require": {
     "php": ">=8.0",
-    "johnpbloch/wordpress": "6.2.2",
-    "itsahappymedium/advanced-custom-fields-pro": "6.1.7",
-    "itsahappymedium/gravityforms": "2.7.9",
+    "johnpbloch/wordpress": "6.4.2",
+    "itsahappymedium/advanced-custom-fields-pro": "6.2.4",
+    "itsahappymedium/gravityforms": "2.8.0",
     "kodehappy/manualpress": "0.0.6",
     "wpackagist-plugin/ajax-thumbnail-rebuild": "1.14",
-    "wpackagist-plugin/google-analytics-for-wordpress": "8.17",
+    "wpackagist-plugin/google-analytics-for-wordpress": "8.22.0",
     "wpackagist-plugin/svg-support": "2.5.5",
-    "wpackagist-plugin/updraftplus": "1.23.6",
-    "wpackagist-plugin/user-role-editor": "4.63.3",
-    "wpackagist-plugin/wordpress-seo": "20.10"
+    "wpackagist-plugin/updraftplus": "1.23.13",
+    "wpackagist-plugin/user-role-editor": "4.64.1",
+    "wpackagist-plugin/wordpress-seo": "21.7",
+    "wpackagist-plugin/wp-mail-smtp": "3.10.0"
   },
   "require-dev": {
-    "itsahappymedium/fec": "^0.2.0",
+    "itsahappymedium/fec": "^0.2.1",
     "itsahappymedium/gpm": "^0.1.1",
-    "itsahappymedium/wp-deployer": "^0.1.1"
+    "itsahappymedium/wp-deployer": "^0.3.0"
   }
 }
