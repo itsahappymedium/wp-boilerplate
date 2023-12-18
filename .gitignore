@@ -49,3 +49,4 @@ node_modules
 ai-cache/*
 .sass-cache
 reate-dirs
+/robots.txt
