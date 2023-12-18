@@ -41,7 +41,7 @@ staging-server:
   url: {{WP_BOILERPLATE_STAGING_URL}}
   wp_site_url: {{WP_BOILERPLATE_STAGING_URL}}/wordpress
   database:
-    host: localhost
+    host: 127.0.0.1:3306
     database: wp_{{WP_BOILERPLATE_SLUG}}
     username: {{WP_BOILERPLATE_STAGING_DB_USER}}
     password: {{WP_BOILERPLATE_STAGING_DB_PASS}}
@@ -58,7 +58,7 @@ production-server:
   url: {{WP_BOILERPLATE_PRODUCTION_URL}}
   wp_site_url: {{WP_BOILERPLATE_PRODUCTION_URL}}/wordpress
   database:
-    host: localhost
+    host: 127.0.0.1:3306
     database: wp_{{WP_BOILERPLATE_SLUG}}
     username: {{WP_BOILERPLATE_PRODUCTION_DB_USER}}
     password: {{WP_BOILERPLATE_PRODUCTION_DB_PASS}}
