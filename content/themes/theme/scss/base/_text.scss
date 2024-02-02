@@ -1,10 +1,59 @@
-body {
-  color: $dark-gray;
-  font-family: verdana;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+a {
+  color: $link-default;
+
+  &:disabled {
+    color: $link-inactive;
+  }
+
+  &:hover {
+    color: $link-hover;
+  }
+
+  &:visited {
+    color: $link-visited;
+  }
 }
 
-a {
-  color: $pink;
+h1 {
+  color: $text-primary;
+  font: $primary-font-bold-large;
+  margin: 0;
+}
+
+h2 {
+  color: $text-primary;
+  font: $primary-font-semibold-medium;
+  margin: 0;
+}
+
+h3 {
+  color: $text-primary;
+  font: $primary-font-semibold-standard;
+  margin: 0;
+}
+
+h4 {
+  color: $text-primary;
+  font: $primary-font-semibold-normal;
+  margin: 0;
+}
+
+blockquote {
+  color: $text-special;
+  font: $primary-font-regular-large;
+}
+
+.page-title {
+  color: $text-primary;
+  font: $primary-tight-font-semibold-medium;
+  margin: 0;
+  margin-top: $spacing-xxxl;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-widetrack {
+  letter-spacing: 0.905px;
 }

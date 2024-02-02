@@ -105,6 +105,13 @@ function hm_filter_yoast_seo_metabox() {
 }
 
 
+// Customized breadcrumb separator
+add_filter('wpseo_breadcrumb_separator', 'hm_breadcrumb_separator');
+function hm_breadcrumb_separator($separator) {
+  return ' / ';
+}
+
+
 // Google Analytics
 add_action('wp_head', 'hm_google_analytics_tracking_code');
 function hm_google_analytics_tracking_code() {

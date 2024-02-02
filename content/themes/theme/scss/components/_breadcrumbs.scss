@@ -1,0 +1,11 @@
+#breadcrumbs {
+  color: $text-primary;
+  font: $primary-font-regular-small;
+  margin: 0;
+  padding: 0;
+
+  a {
+    color: $text-primary;
+    text-decoration-color: $text-special;
+  }
+}

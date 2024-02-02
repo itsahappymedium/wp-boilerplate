@@ -1,6 +1,153 @@
 $images: 'img';
 
-$black: #000000;
-$white: #FFFFFF;
+$black: #000;
+$black-coffee: #4c4b33;
+$dusty-rose: #cd8396;
+$gray--100: #f7f7f7;
+$gray--300: #dedede;
+$gray--400: #c4c4c4;
+$gray--600: #999;
+$gray--800: #666667;
+$gray--900: #222;
+$latte: #f2eeea;
+$off-white: #fafafa;
+$red: #b22902;
 $pink: #de4566;
-$dark-gray: #3A3D45;
+$light-pink: #ffd3da;
+$dark-pink: #593349;
+$white: #fff;
+
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-xl: 32px;
+$radius-2xl: 128px;
+$radius-3xl: 360px;
+
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 20px;
+$spacing-xl: 24px;
+$spacing-xxl: 28px;
+$spacing-xxxl: 32px;
+$spacing-big: 36px;
+$spacing-huge: 48px;
+$spacing-colossal: 64px;
+$spacing-gargantuan: 128px;
+$spacing-titanic: 154px;
+$spacing-massive: 184px;
+
+$container-mobile-buffer: 28px;
+$container-tablet-buffer: 64px;
+$container-desktop-buffer: 92px;
+$container-max-width: 1072px;
+
+$text-primary: $gray--900;
+$text-secondary: $gray--800;
+$text-error: $red;
+$text-highlight: $gray--300;
+$text-darkmode: $white;
+$text-special: $light-pink;
+
+$surface-primary: $off-white;
+$surface-secondary: $latte;
+$surface-tertiary: $light-pink;
+
+$border-decorative: $gray--900;
+$border-focus: $light-pink;
+
+$radius-minimal: $radius-sm;
+$radius-rounded: $spacing-md;
+$radius-full: $radius-3xl;
+
+$link-default: $light-pink;
+$link-hover: $pink;
+$link-hit: $dusty-rose;
+$link-visited: $dark-pink;
+$link-inactive: $black-coffee;
+
+$header-height: 82px;
+$header-fill: $white;
+$header-text: $black;
+$header-link-default: $text-primary;
+$header-link-hover: $link-default;
+$header-link-selected: $link-hit;
+$header-link-border-thickness: $spacing-xxs;
+$header-desktop-item-background-default: transparent;
+$header-desktop-item-background-hover: transparent;
+$header-desktop-item-background-selected: transparent;
+$header-desktop-item-limit: false;
+$header-menu-count: 1;
+$header-mobile-full-height: false;
+$header-mobile-btn-default: $text-primary;
+$header-mobile-btn-selected: $dusty-rose;
+$header-mobile-btn-open-property: fill;
+$header-mobile-btn-close-property: stroke;
+$header-mobile-nav-breakpoint: 'desktop';
+$header-mobile-nav-item-divider: 1px solid $header-link-default;
+$header-mobile-right-nav: ':last-child';
+$header-submenu-chevron-size: 5px;
+$header-submenu-chevron-thickness: 1px;
+$header-submenus: (
+  submenu-1: (
+    fill: $surface-secondary,
+    link-default: $text-primary,
+    link-hover: $gray--300,
+    link-selected: $dusty-rose,
+    item-background-default: transparent,
+    item-background-hover: transparent,
+    item-background-selected: transparent
+  ),
+  submenu-2: (
+    fill: $dusty-rose,
+    link-default: $text-darkmode,
+    link-hover: $gray--300,
+    link-selected: $gray--800,
+    item-background-default: transparent,
+    item-background-hover: transparent,
+    item-background-selected: transparent
+  )
+);
+
+$footer-fill: $surface-secondary;
+$footer-text: $header-text;
+$footer-link-default: $header-link-default;
+$footer-link-hover: $header-link-hover;
+$footer-link-selected: $header-link-selected;
+
+$table-header: $gray--900;
+$table-rowa: $white;
+$table-rowb: $gray--100;
+$table-highlight: $latte;
+
+$button-primary-fill-default: transparent;
+$button-primary-fill-hover: $light-pink;
+$button-primary-fill-disabled: transparent;
+$button-primary-fill-selected: $dusty-rose;
+$button-primary-border-default: 2px solid $light-pink;
+$button-primary-border-hover: 2px solid $light-pink;
+$button-primary-border-disabled: 2px solid $gray--600;
+$button-primary-border-selected: 2px solid $dusty-rose;
+$button-primary-focus: $gray--600;
+$button-primary-text-default: $text-primary;
+$button-primary-text-hover: $text-darkmode;
+$button-primary-text-disabled: $gray--600;
+$button-primary-text-selected: $text-primary;
+
+$button-secondary-fill-default: $black;
+$button-secondary-fill-hover: $latte;
+$button-secondary-fill-disabled: $gray--600;
+$button-secondary-fill-selected: $dusty-rose;
+$button-secondary-border-default: 2px solid $black;
+$button-secondary-border-hover: 2px solid $latte;
+$button-secondary-border-disabled: 2px solid $gray--600;
+$button-secondary-border-selected: 2px solid $dusty-rose;
+$button-secondary-focus: $white;
+$button-secondary-text-default: $text-darkmode;
+$button-secondary-text-hover: $text-primary;
+$button-secondary-text-disabled: $gray--600;
+$button-secondary-text-selected: $text-darkmode;

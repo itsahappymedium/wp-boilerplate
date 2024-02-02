@@ -1,0 +1,92 @@
+.btn,
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @extend .text-uppercase, .text-widetrack;
+
+  background-color: $button-primary-fill-default;
+  border: $button-primary-border-default;
+  color: $button-primary-text-default;
+  cursor: pointer;
+  display: inline-block;
+  font: $primary-font-medium-small;
+  // height: $spacing-big;
+  line-height: $spacing-big;
+  outline: 0;
+  padding: 0 $spacing-sm;
+  text-decoration: none;
+
+  &:active {
+    background-color: $button-primary-fill-selected;
+    border: $button-primary-border-selected;
+    color: $button-primary-text-selected;
+  }
+
+  &:disabled {
+    background-color: $button-primary-fill-disabled;
+    border: $button-primary-border-disabled;
+    color: $button-primary-text-disabled;
+  }
+
+  &:hover {
+    background-color: $button-primary-fill-hover;
+    border: $button-primary-border-hover;
+    color: $button-primary-text-hover;
+  }
+}
+
+.btn-secondary {
+  background-color: $button-secondary-fill-default;
+  border: $button-secondary-border-default;
+  color: $button-secondary-text-default;
+
+  &:active {
+    background-color: $button-secondary-fill-selected;
+    border: $button-secondary-border-selected;
+    color: $button-secondary-text-selected;
+  }
+
+  &:disabled {
+    background-color: $button-secondary-fill-disabled;
+    border: $button-secondary-border-disabled;
+    color: $button-secondary-text-disabled;
+  }
+
+  &:hover {
+    background-color: $button-secondary-fill-hover;
+    color: $button-secondary-text-hover;
+    border: $button-secondary-border-hover;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"],
+input[type="week"],
+textarea {
+  background-color: $white;
+  border: 1px solid $text-highlight;
+  color: $text-secondary;
+  font: $primary-font-regular-small;
+  padding: $spacing-sm;
+}
+
+label {
+  color: $text-primary;
+  font: $primary-font-semibold-small;
+
+  // Hides the "(Required)" text from Gravity Forms labels
+  .gfield_required {
+    display: none;
+    visibility: hidden;
+  }
+}

@@ -9,13 +9,12 @@
 <body <?php body_class(); ?>>
   <header>
     <div class="container">
-      <div class="header-left">
+      <div class="header-brand">
         <a href="<?=home_url()?>">
           <img src="<?=IMAGES?>/svg/logo.svg" class="logo">
-          <span class="brand"><?=bloginfo('name');?></span>
         </a>
       </div>
-      <a href="#" class="header-navigation-button"><span></span></a>
+
       <div class="header-navigation">
         <?php
         wp_nav_menu(array(
@@ -23,6 +22,12 @@
         ));
         ?>
       </div>
+
+      <a href="#" class="header-navigation-btn">
+        <span>Menu</span>
+        <?=get_svg('hamburger', 'closed')?>
+        <?=get_svg('x', 'opened')?>
+      </a>
     </div>
   </header>
 

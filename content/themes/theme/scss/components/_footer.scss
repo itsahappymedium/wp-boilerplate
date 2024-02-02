@@ -1,31 +1,86 @@
 footer {
-  background-color: $pink;
-  color: $white;
-  padding: 1rem 0;
+  background-color: $footer-fill;
+  color: $footer-text;
+  font: $primary-font-regular-tiny;
+  padding: $spacing-huge 0;
   text-align: center;
 
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: #{$spacing-xl / 2};
+    justify-content: space-between;
+
+    @include media('>=tablet') {
+      flex-direction: row;
+
+      > * {
+        width: calc(100% / 3);
+  
+        &:nth-child(1) {
+          text-align: left;
+        }
+  
+        &:nth-child(2) {
+          text-align: center;
+        }
+  
+        &:nth-child(3) {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .logo {
+    display: block;
+    max-height: 150px;
+    max-width: 150px;
+
+    @include media('>=tablet') {
+      max-height: 200px;
+      max-width: 200px;
+    }
+  }
+
   a {
-    color: $white;
+    color: $footer-link-default;
+    white-space: nowrap;
+
+    &:active {
+      color: $footer-link-selected;
+    }
+
+    &:hover {
+      color: $footer-link-hover;
+    }
+
+    img,
+    svg {
+      display: block;
+    }
   }
 
   ul {
-    @extend .cf;
-
-    display: inline-block;
     list-style-type: none;
     margin: 0;
     padding: 0;
 
     li {
-      float: left;
-
       &:not(:last-of-type) {
         margin-right: .5rem;
       }
     }
   }
 
-  p:last-child {
-    margin-bottom: 0;
+  p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    @include media('>=tablet') {
+      text-align: right;
+    }
   }
 }

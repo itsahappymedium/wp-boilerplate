@@ -1,14 +1,14 @@
+@import "base/fonts";
 @import "base/variables";
 
-@import "eduardoboucas/include-media/dist/include-media";
-@import "wordpress/wordpress-core.css/wordpress-core";
-
-@import "base/mixins";
+@import "gpm_modules/eduardoboucas/include-media/dist/include-media";
+@import "gpm_modules/wordpress/wordpress-core.css/wordpress-core";
 
 @import "base/base";
 @import "base/text";
 @import "base/layout";
 
+@import "components/breadcrumbs";
 @import "components/header";
 @import "components/footer";
 @import "components/forms";

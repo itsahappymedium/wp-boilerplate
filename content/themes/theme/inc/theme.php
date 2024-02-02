@@ -37,10 +37,29 @@ function hm_setup() {
 }
 
 
-// Disables the default page content editor on pages
+// Disables the Gravity Forms Theme
+add_filter('gform_disable_form_theme_css', '__return_true');
+add_filter('gform_disable_form_legacy_css', '__return_true');
+
+
+// Disables the default content editor on pages using templates that don't use the editor
 add_action('init', 'hm_remove_editor_from_post_type');
 function hm_remove_editor_from_post_type() {
-  remove_post_type_support('page', 'editor');
+  $no_editor_slugs = array();
+
+  $no_editor_templates = array(
+    'template-flex-page.php'
+  );
+
+  if (isset($_REQUEST['post'])) {
+    $post_id = $_REQUEST['post'];
+    $template = get_post_meta($post_id, '_wp_page_template', true);
+    $slug = get_post_field('post_name', $post_id);
+
+    if (in_array($template, $no_editor_templates) || in_array($slug, $no_editor_slugs)) {
+      remove_post_type_support('page', 'editor');
+    }
+  }
 }
 
 

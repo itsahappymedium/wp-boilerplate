@@ -1,0 +1,305 @@
+$work-sans: "Arial", sans-serif;
+
+$work-sans-sizes: (
+  micro: 12.1px/20px,
+  tiny: 15.1px/28px,
+  small: 18.1px/32px,
+  slight: 21.2px/40px,
+  normal: 24.2px/44px,
+  standard: 30.25px/48px,
+  medium: 36.35px/52px,
+  large: 42.4px/56px,
+  big: 48.5px/60px,
+  huge: 54.5px/64px,
+  colossal: 60.6px/68px
+);
+
+$work-sans-tight-sizes: (
+  micro: 12.1px/14px,
+  tiny: 15.1px/18px,
+  small: 18.1px/24px,
+  slight: 21.2px/28px,
+  normal: 24.2px/32px,
+  standard: 30.25px/38px,
+  medium: 36.35px/46px
+);
+
+$site-font-weights: (
+  thin: 100,
+  extralight: 200,
+  ultralight: 200,
+  light: 300,
+  normal: 400,
+  regular: 400,
+  medium: 500,
+  demibold: 600,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  ultrabold: 800
+);
+
+$site-fonts: (
+  primary: ($work-sans, $work-sans-sizes),
+  primary-tight: ($work-sans, $work-sans-tight-sizes)
+);
+
+@function get-font($font: 'primary', $weight: 'normal', $size: 'normal', $style: 'normal', $variant: 'normal') {
+  $info: map-get($site-fonts, $font);
+  $family: nth($info, 1);
+
+  @if (type-of($size) == 'string') {
+    $size: map-get(nth($info, 2), $size);
+  }
+
+  @if (type-of($weight) == 'string' && $weight != 'lighter' && $weight != 'bolder') {
+    @if (length($info) == 3) {
+      $weight: map-get(nth($info, 3), $weight);
+    } @else {
+      $weight: map-get($site-font-weights, $weight);
+    }
+  }
+
+  @return unquote($style) unquote($variant) $weight $size $family;
+}
+
+$primary-font-thin-micro: get-font('primary', 'thin', 'micro');
+$primary-font-thin-tiny: get-font('primary', 'thin', 'tiny');
+$primary-font-thin-small: get-font('primary', 'thin', 'small');
+$primary-font-thin-slight: get-font('primary', 'thin', 'slight');
+$primary-font-thin-normal: get-font('primary', 'thin', 'normal');
+$primary-font-thin-standard: get-font('primary', 'thin', 'standard');
+$primary-font-thin-medium: get-font('primary', 'thin', 'medium');
+$primary-font-thin-large: get-font('primary', 'thin', 'large');
+$primary-font-thin-big: get-font('primary', 'thin', 'big');
+$primary-font-thin-huge: get-font('primary', 'thin', 'huge');
+$primary-font-thin-colossal: get-font('primary', 'thin', 'colossal');
+
+$primary-font-extralight-micro: get-font('primary', 'extralight', 'micro');
+$primary-font-extralight-tiny: get-font('primary', 'extralight', 'tiny');
+$primary-font-extralight-small: get-font('primary', 'extralight', 'small');
+$primary-font-extralight-slight: get-font('primary', 'extralight', 'slight');
+$primary-font-extralight-normal: get-font('primary', 'extralight', 'normal');
+$primary-font-extralight-standard: get-font('primary', 'extralight', 'standard');
+$primary-font-extralight-medium: get-font('primary', 'extralight', 'medium');
+$primary-font-extralight-large: get-font('primary', 'extralight', 'large');
+$primary-font-extralight-big: get-font('primary', 'extralight', 'big');
+$primary-font-extralight-huge: get-font('primary', 'extralight', 'huge');
+$primary-font-extralight-colossal: get-font('primary', 'extralight', 'colossal');
+
+$primary-font-ultralight-micro: get-font('primary', 'ultralight', 'micro');
+$primary-font-ultralight-tiny: get-font('primary', 'ultralight', 'tiny');
+$primary-font-ultralight-small: get-font('primary', 'ultralight', 'small');
+$primary-font-ultralight-slight: get-font('primary', 'ultralight', 'slight');
+$primary-font-ultralight-normal: get-font('primary', 'ultralight', 'normal');
+$primary-font-ultralight-standard: get-font('primary', 'ultralight', 'standard');
+$primary-font-ultralight-medium: get-font('primary', 'ultralight', 'medium');
+$primary-font-ultralight-large: get-font('primary', 'ultralight', 'large');
+$primary-font-ultralight-big: get-font('primary', 'ultralight', 'big');
+$primary-font-ultralight-huge: get-font('primary', 'ultralight', 'huge');
+$primary-font-ultralight-colossal: get-font('primary', 'ultralight', 'colossal');
+
+$primary-font-light-micro: get-font('primary', 'light', 'micro');
+$primary-font-light-tiny: get-font('primary', 'light', 'tiny');
+$primary-font-light-small: get-font('primary', 'light', 'small');
+$primary-font-light-slight: get-font('primary', 'light', 'slight');
+$primary-font-light-normal: get-font('primary', 'light', 'normal');
+$primary-font-light-standard: get-font('primary', 'light', 'standard');
+$primary-font-light-medium: get-font('primary', 'light', 'medium');
+$primary-font-light-large: get-font('primary', 'light', 'large');
+$primary-font-light-big: get-font('primary', 'light', 'big');
+$primary-font-light-huge: get-font('primary', 'light', 'huge');
+$primary-font-light-colossal: get-font('primary', 'light', 'colossal');
+
+$primary-font-normal-micro: get-font('primary', 'normal', 'micro');
+$primary-font-normal-tiny: get-font('primary', 'normal', 'tiny');
+$primary-font-normal-small: get-font('primary', 'normal', 'small');
+$primary-font-normal-slight: get-font('primary', 'normal', 'slight');
+$primary-font-normal-normal: get-font('primary', 'normal', 'normal');
+$primary-font-normal-standard: get-font('primary', 'normal', 'standard');
+$primary-font-normal-medium: get-font('primary', 'normal', 'medium');
+$primary-font-normal-large: get-font('primary', 'normal', 'large');
+$primary-font-normal-big: get-font('primary', 'normal', 'big');
+$primary-font-normal-huge: get-font('primary', 'normal', 'huge');
+$primary-font-normal-colossal: get-font('primary', 'normal', 'colossal');
+
+$primary-font-regular-micro: get-font('primary', 'regular', 'micro');
+$primary-font-regular-tiny: get-font('primary', 'regular', 'tiny');
+$primary-font-regular-small: get-font('primary', 'regular', 'small');
+$primary-font-regular-slight: get-font('primary', 'regular', 'slight');
+$primary-font-regular-normal: get-font('primary', 'regular', 'normal');
+$primary-font-regular-standard: get-font('primary', 'regular', 'standard');
+$primary-font-regular-medium: get-font('primary', 'regular', 'medium');
+$primary-font-regular-large: get-font('primary', 'regular', 'large');
+$primary-font-regular-big: get-font('primary', 'regular', 'big');
+$primary-font-regular-huge: get-font('primary', 'regular', 'huge');
+$primary-font-regular-colossal: get-font('primary', 'regular', 'colossal');
+
+$primary-font-medium-micro: get-font('primary', 'medium', 'micro');
+$primary-font-medium-tiny: get-font('primary', 'medium', 'tiny');
+$primary-font-medium-small: get-font('primary', 'medium', 'small');
+$primary-font-medium-slight: get-font('primary', 'medium', 'slight');
+$primary-font-medium-normal: get-font('primary', 'medium', 'normal');
+$primary-font-medium-standard: get-font('primary', 'medium', 'standard');
+$primary-font-medium-medium: get-font('primary', 'medium', 'medium');
+$primary-font-medium-large: get-font('primary', 'medium', 'large');
+$primary-font-medium-big: get-font('primary', 'medium', 'big');
+$primary-font-medium-huge: get-font('primary', 'medium', 'huge');
+$primary-font-medium-colossal: get-font('primary', 'medium', 'colossal');
+
+$primary-font-demibold-micro: get-font('primary', 'demibold', 'micro');
+$primary-font-demibold-tiny: get-font('primary', 'demibold', 'tiny');
+$primary-font-demibold-small: get-font('primary', 'demibold', 'small');
+$primary-font-demibold-slight: get-font('primary', 'demibold', 'slight');
+$primary-font-demibold-normal: get-font('primary', 'demibold', 'normal');
+$primary-font-demibold-standard: get-font('primary', 'demibold', 'standard');
+$primary-font-demibold-medium: get-font('primary', 'demibold', 'medium');
+$primary-font-demibold-large: get-font('primary', 'demibold', 'large');
+$primary-font-demibold-big: get-font('primary', 'demibold', 'big');
+$primary-font-demibold-huge: get-font('primary', 'demibold', 'huge');
+$primary-font-demibold-colossal: get-font('primary', 'demibold', 'colossal');
+
+$primary-font-semibold-micro: get-font('primary', 'semibold', 'micro');
+$primary-font-semibold-tiny: get-font('primary', 'semibold', 'tiny');
+$primary-font-semibold-small: get-font('primary', 'semibold', 'small');
+$primary-font-semibold-slight: get-font('primary', 'semibold', 'slight');
+$primary-font-semibold-normal: get-font('primary', 'semibold', 'normal');
+$primary-font-semibold-standard: get-font('primary', 'semibold', 'standard');
+$primary-font-semibold-medium: get-font('primary', 'semibold', 'medium');
+$primary-font-semibold-large: get-font('primary', 'semibold', 'large');
+$primary-font-semibold-big: get-font('primary', 'semibold', 'big');
+$primary-font-semibold-huge: get-font('primary', 'semibold', 'huge');
+$primary-font-semibold-colossal: get-font('primary', 'semibold', 'colossal');
+
+$primary-font-bold-micro: get-font('primary', 'bold', 'micro');
+$primary-font-bold-tiny: get-font('primary', 'bold', 'tiny');
+$primary-font-bold-small: get-font('primary', 'bold', 'small');
+$primary-font-bold-slight: get-font('primary', 'bold', 'slight');
+$primary-font-bold-normal: get-font('primary', 'bold', 'normal');
+$primary-font-bold-standard: get-font('primary', 'bold', 'standard');
+$primary-font-bold-medium: get-font('primary', 'bold', 'medium');
+$primary-font-bold-large: get-font('primary', 'bold', 'large');
+$primary-font-bold-big: get-font('primary', 'bold', 'big');
+$primary-font-bold-huge: get-font('primary', 'bold', 'huge');
+$primary-font-bold-colossal: get-font('primary', 'bold', 'colossal');
+
+$primary-font-extrabold-micro: get-font('primary', 'extrabold', 'micro');
+$primary-font-extrabold-tiny: get-font('primary', 'extrabold', 'tiny');
+$primary-font-extrabold-small: get-font('primary', 'extrabold', 'small');
+$primary-font-extrabold-slight: get-font('primary', 'extrabold', 'slight');
+$primary-font-extrabold-normal: get-font('primary', 'extrabold', 'normal');
+$primary-font-extrabold-standard: get-font('primary', 'extrabold', 'standard');
+$primary-font-extrabold-medium: get-font('primary', 'extrabold', 'medium');
+$primary-font-extrabold-large: get-font('primary', 'extrabold', 'large');
+$primary-font-extrabold-big: get-font('primary', 'extrabold', 'big');
+$primary-font-extrabold-huge: get-font('primary', 'extrabold', 'huge');
+$primary-font-extrabold-colossal: get-font('primary', 'extrabold', 'colossal');
+
+$primary-font-ultrabold-micro: get-font('primary', 'ultrabold', 'micro');
+$primary-font-ultrabold-tiny: get-font('primary', 'ultrabold', 'tiny');
+$primary-font-ultrabold-small: get-font('primary', 'ultrabold', 'small');
+$primary-font-ultrabold-slight: get-font('primary', 'ultrabold', 'slight');
+$primary-font-ultrabold-normal: get-font('primary', 'ultrabold', 'normal');
+$primary-font-ultrabold-standard: get-font('primary', 'ultrabold', 'standard');
+$primary-font-ultrabold-medium: get-font('primary', 'ultrabold', 'medium');
+$primary-font-ultrabold-large: get-font('primary', 'ultrabold', 'large');
+$primary-font-ultrabold-big: get-font('primary', 'ultrabold', 'big');
+$primary-font-ultrabold-huge: get-font('primary', 'ultrabold', 'huge');
+$primary-font-ultrabold-colossal: get-font('primary', 'ultrabold', 'colossal');
+
+
+$primary-tight-font-thin-micro: get-font('primary-tight', 'thin', 'micro');
+$primary-tight-font-thin-tiny: get-font('primary-tight', 'thin', 'tiny');
+$primary-tight-font-thin-small: get-font('primary-tight', 'thin', 'small');
+$primary-tight-font-thin-slight: get-font('primary-tight', 'thin', 'slight');
+$primary-tight-font-thin-normal: get-font('primary-tight', 'thin', 'normal');
+$primary-tight-font-thin-standard: get-font('primary-tight', 'thin', 'standard');
+$primary-tight-font-thin-medium: get-font('primary-tight', 'thin', 'medium');
+
+$primary-tight-font-extralight-micro: get-font('primary-tight', 'extralight', 'micro');
+$primary-tight-font-extralight-tiny: get-font('primary-tight', 'extralight', 'tiny');
+$primary-tight-font-extralight-small: get-font('primary-tight', 'extralight', 'small');
+$primary-tight-font-extralight-slight: get-font('primary-tight', 'extralight', 'slight');
+$primary-tight-font-extralight-normal: get-font('primary-tight', 'extralight', 'normal');
+$primary-tight-font-extralight-standard: get-font('primary-tight', 'extralight', 'standard');
+$primary-tight-font-extralight-medium: get-font('primary-tight', 'extralight', 'medium');
+
+$primary-tight-font-ultralight-micro: get-font('primary-tight', 'ultralight', 'micro');
+$primary-tight-font-ultralight-tiny: get-font('primary-tight', 'ultralight', 'tiny');
+$primary-tight-font-ultralight-small: get-font('primary-tight', 'ultralight', 'small');
+$primary-tight-font-ultralight-slight: get-font('primary-tight', 'ultralight', 'slight');
+$primary-tight-font-ultralight-normal: get-font('primary-tight', 'ultralight', 'normal');
+$primary-tight-font-ultralight-standard: get-font('primary-tight', 'ultralight', 'standard');
+$primary-tight-font-ultralight-medium: get-font('primary-tight', 'ultralight', 'medium');
+
+$primary-tight-font-light-micro: get-font('primary-tight', 'light', 'micro');
+$primary-tight-font-light-tiny: get-font('primary-tight', 'light', 'tiny');
+$primary-tight-font-light-small: get-font('primary-tight', 'light', 'small');
+$primary-tight-font-light-slight: get-font('primary-tight', 'light', 'slight');
+$primary-tight-font-light-normal: get-font('primary-tight', 'light', 'normal');
+$primary-tight-font-light-standard: get-font('primary-tight', 'light', 'standard');
+$primary-tight-font-light-medium: get-font('primary-tight', 'light', 'medium');
+
+$primary-tight-font-normal-micro: get-font('primary-tight', 'normal', 'micro');
+$primary-tight-font-normal-tiny: get-font('primary-tight', 'normal', 'tiny');
+$primary-tight-font-normal-small: get-font('primary-tight', 'normal', 'small');
+$primary-tight-font-normal-slight: get-font('primary-tight', 'normal', 'slight');
+$primary-tight-font-normal-normal: get-font('primary-tight', 'normal', 'normal');
+$primary-tight-font-normal-standard: get-font('primary-tight', 'normal', 'standard');
+$primary-tight-font-normal-medium: get-font('primary-tight', 'normal', 'medium');
+
+$primary-tight-font-regular-micro: get-font('primary-tight', 'regular', 'micro');
+$primary-tight-font-regular-tiny: get-font('primary-tight', 'regular', 'tiny');
+$primary-tight-font-regular-small: get-font('primary-tight', 'regular', 'small');
+$primary-tight-font-regular-slight: get-font('primary-tight', 'regular', 'slight');
+$primary-tight-font-regular-normal: get-font('primary-tight', 'regular', 'normal');
+$primary-tight-font-regular-standard: get-font('primary-tight', 'regular', 'standard');
+$primary-tight-font-regular-medium: get-font('primary-tight', 'regular', 'medium');
+
+$primary-tight-font-medium-micro: get-font('primary-tight', 'medium', 'micro');
+$primary-tight-font-medium-tiny: get-font('primary-tight', 'medium', 'tiny');
+$primary-tight-font-medium-small: get-font('primary-tight', 'medium', 'small');
+$primary-tight-font-medium-slight: get-font('primary-tight', 'medium', 'slight');
+$primary-tight-font-medium-normal: get-font('primary-tight', 'medium', 'normal');
+$primary-tight-font-medium-standard: get-font('primary-tight', 'medium', 'standard');
+$primary-tight-font-medium-medium: get-font('primary-tight', 'medium', 'medium');
+
+$primary-tight-font-demibold-micro: get-font('primary-tight', 'demibold', 'micro');
+$primary-tight-font-demibold-tiny: get-font('primary-tight', 'demibold', 'tiny');
+$primary-tight-font-demibold-small: get-font('primary-tight', 'demibold', 'small');
+$primary-tight-font-demibold-slight: get-font('primary-tight', 'demibold', 'slight');
+$primary-tight-font-demibold-normal: get-font('primary-tight', 'demibold', 'normal');
+$primary-tight-font-demibold-standard: get-font('primary-tight', 'demibold', 'standard');
+$primary-tight-font-demibold-medium: get-font('primary-tight', 'demibold', 'medium');
+
+$primary-tight-font-semibold-micro: get-font('primary-tight', 'semibold', 'micro');
+$primary-tight-font-semibold-tiny: get-font('primary-tight', 'semibold', 'tiny');
+$primary-tight-font-semibold-small: get-font('primary-tight', 'semibold', 'small');
+$primary-tight-font-semibold-slight: get-font('primary-tight', 'semibold', 'slight');
+$primary-tight-font-semibold-normal: get-font('primary-tight', 'semibold', 'normal');
+$primary-tight-font-semibold-standard: get-font('primary-tight', 'semibold', 'standard');
+$primary-tight-font-semibold-medium: get-font('primary-tight', 'semibold', 'medium');
+
+$primary-tight-font-bold-micro: get-font('primary-tight', 'bold', 'micro');
+$primary-tight-font-bold-tiny: get-font('primary-tight', 'bold', 'tiny');
+$primary-tight-font-bold-small: get-font('primary-tight', 'bold', 'small');
+$primary-tight-font-bold-slight: get-font('primary-tight', 'bold', 'slight');
+$primary-tight-font-bold-normal: get-font('primary-tight', 'bold', 'normal');
+$primary-tight-font-bold-standard: get-font('primary-tight', 'bold', 'standard');
+$primary-tight-font-bold-medium: get-font('primary-tight', 'bold', 'medium');
+
+$primary-tight-font-extrabold-micro: get-font('primary-tight', 'extrabold', 'micro');
+$primary-tight-font-extrabold-tiny: get-font('primary-tight', 'extrabold', 'tiny');
+$primary-tight-font-extrabold-small: get-font('primary-tight', 'extrabold', 'small');
+$primary-tight-font-extrabold-slight: get-font('primary-tight', 'extrabold', 'slight');
+$primary-tight-font-extrabold-normal: get-font('primary-tight', 'extrabold', 'normal');
+$primary-tight-font-extrabold-standard: get-font('primary-tight', 'extrabold', 'standard');
+$primary-tight-font-extrabold-medium: get-font('primary-tight', 'extrabold', 'medium');
+
+$primary-tight-font-ultrabold-micro: get-font('primary-tight', 'ultrabold', 'micro');
+$primary-tight-font-ultrabold-tiny: get-font('primary-tight', 'ultrabold', 'tiny');
+$primary-tight-font-ultrabold-small: get-font('primary-tight', 'ultrabold', 'small');
+$primary-tight-font-ultrabold-slight: get-font('primary-tight', 'ultrabold', 'slight');
+$primary-tight-font-ultrabold-normal: get-font('primary-tight', 'ultrabold', 'normal');
+$primary-tight-font-ultrabold-standard: get-font('primary-tight', 'ultrabold', 'standard');
+$primary-tight-font-ultrabold-medium: get-font('primary-tight', 'ultrabold', 'medium');

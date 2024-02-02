@@ -1,8 +1,16 @@
 body {
   box-sizing: border-box;
-  overflow-x: hidden;
+  color: $text-primary;
+  font: $primary-font-normal-small;
   margin: 0;
+  overflow-x: hidden;
   padding: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  @include media('>=desktop') {
+    font: $primary-font-regular-normal;
+  }
 }
 
 .cf::after {
@@ -14,4 +22,25 @@ body {
 .hidden {
   display: none !important;
   visibility: hidden !important;
+}
+
+.hide-mobile {
+  @include media('<tablet') {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+.hide-tablet {
+  @include media('>=tablet', '<desktop') {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+.hide-desktop {
+  @include media('>=desktop') {
+    display: none !important;
+    visibility: hidden !important;
+  }
 }
