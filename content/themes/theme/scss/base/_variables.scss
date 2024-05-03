@@ -19,6 +19,8 @@ $white: #fff;
 
 $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 
+$header-mobile-nav-breakpoint: 1250px;
+
 $radius-sm: 4px;
 $radius-md: 8px;
 $radius-lg: 16px;
@@ -69,55 +71,6 @@ $link-hover: $pink;
 $link-hit: $dusty-rose;
 $link-visited: $dark-pink;
 $link-inactive: $black-coffee;
-
-$header-height: 82px;
-$header-fill: $white;
-$header-text: $black;
-$header-link-default: $text-primary;
-$header-link-hover: $link-default;
-$header-link-selected: $link-hit;
-$header-link-border-thickness: $spacing-xxs;
-$header-desktop-item-background-default: transparent;
-$header-desktop-item-background-hover: transparent;
-$header-desktop-item-background-selected: transparent;
-$header-desktop-item-limit: false;
-$header-menu-count: 1;
-$header-mobile-full-height: false;
-$header-mobile-btn-default: $text-primary;
-$header-mobile-btn-selected: $dusty-rose;
-$header-mobile-btn-open-property: fill;
-$header-mobile-btn-close-property: stroke;
-$header-mobile-nav-breakpoint: 'desktop';
-$header-mobile-nav-item-divider: 1px solid $header-link-default;
-$header-mobile-right-nav: ':last-child';
-$header-submenu-chevron-size: 5px;
-$header-submenu-chevron-thickness: 1px;
-$header-submenus: (
-  submenu-1: (
-    fill: $surface-secondary,
-    link-default: $text-primary,
-    link-hover: $gray--300,
-    link-selected: $dusty-rose,
-    item-background-default: transparent,
-    item-background-hover: transparent,
-    item-background-selected: transparent
-  ),
-  submenu-2: (
-    fill: $dusty-rose,
-    link-default: $text-darkmode,
-    link-hover: $gray--300,
-    link-selected: $gray--800,
-    item-background-default: transparent,
-    item-background-hover: transparent,
-    item-background-selected: transparent
-  )
-);
-
-$footer-fill: $surface-secondary;
-$footer-text: $header-text;
-$footer-link-default: $header-link-default;
-$footer-link-hover: $header-link-hover;
-$footer-link-selected: $header-link-selected;
 
 $table-header: $gray--900;
 $table-rowa: $white;

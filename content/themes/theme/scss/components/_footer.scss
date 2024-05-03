@@ -1,6 +1,6 @@
 footer {
-  background-color: $footer-fill;
-  color: $footer-text;
+  background-color: $surface-secondary;
+  color: $black;
   font: $primary-font-regular-tiny;
   padding: $spacing-huge 0;
   text-align: center;
@@ -45,15 +45,15 @@ footer {
   }
 
   a {
-    color: $footer-link-default;
+    color: $text-primary;
     white-space: nowrap;
 
     &:active {
-      color: $footer-link-selected;
+      color: $link-hit;
     }
 
     &:hover {
-      color: $footer-link-hover;
+      color: $link-default;
     }
 
     img,

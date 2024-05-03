@@ -18,7 +18,8 @@
       <div class="header-navigation">
         <?php
         wp_nav_menu(array(
-          'theme_location'  => 'header-navigation'
+          'theme_location'  => 'header-navigation',
+          'depth'           => 2
         ));
         ?>
       </div>

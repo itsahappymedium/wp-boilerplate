@@ -41,7 +41,9 @@ $site-font-weights: (
 
 $site-fonts: (
   primary: ($work-sans, $work-sans-sizes),
-  primary-tight: ($work-sans, $work-sans-tight-sizes)
+  primary-tight: ($work-sans, $work-sans-tight-sizes),
+  secondary: ($work-sans, $work-sans-sizes),
+  secondary-tight: ($work-sans, $work-sans-tight-sizes)
 );
 
 @function get-font($font: 'primary', $weight: 'normal', $size: 'normal', $style: 'normal', $variant: 'normal') {
@@ -303,3 +305,244 @@ $primary-tight-font-ultrabold-slight: get-font('primary-tight', 'ultrabold', 'sl
 $primary-tight-font-ultrabold-normal: get-font('primary-tight', 'ultrabold', 'normal');
 $primary-tight-font-ultrabold-standard: get-font('primary-tight', 'ultrabold', 'standard');
 $primary-tight-font-ultrabold-medium: get-font('primary-tight', 'ultrabold', 'medium');
+
+$secondary-font-thin-micro: get-font('secondary', 'thin', 'micro');
+$secondary-font-thin-tiny: get-font('secondary', 'thin', 'tiny');
+$secondary-font-thin-small: get-font('secondary', 'thin', 'small');
+$secondary-font-thin-slight: get-font('secondary', 'thin', 'slight');
+$secondary-font-thin-normal: get-font('secondary', 'thin', 'normal');
+$secondary-font-thin-standard: get-font('secondary', 'thin', 'standard');
+$secondary-font-thin-medium: get-font('secondary', 'thin', 'medium');
+$secondary-font-thin-large: get-font('secondary', 'thin', 'large');
+$secondary-font-thin-big: get-font('secondary', 'thin', 'big');
+$secondary-font-thin-huge: get-font('secondary', 'thin', 'huge');
+$secondary-font-thin-colossal: get-font('secondary', 'thin', 'colossal');
+
+$secondary-font-extralight-micro: get-font('secondary', 'extralight', 'micro');
+$secondary-font-extralight-tiny: get-font('secondary', 'extralight', 'tiny');
+$secondary-font-extralight-small: get-font('secondary', 'extralight', 'small');
+$secondary-font-extralight-slight: get-font('secondary', 'extralight', 'slight');
+$secondary-font-extralight-normal: get-font('secondary', 'extralight', 'normal');
+$secondary-font-extralight-standard: get-font('secondary', 'extralight', 'standard');
+$secondary-font-extralight-medium: get-font('secondary', 'extralight', 'medium');
+$secondary-font-extralight-large: get-font('secondary', 'extralight', 'large');
+$secondary-font-extralight-big: get-font('secondary', 'extralight', 'big');
+$secondary-font-extralight-huge: get-font('secondary', 'extralight', 'huge');
+$secondary-font-extralight-colossal: get-font('secondary', 'extralight', 'colossal');
+
+$secondary-font-ultralight-micro: get-font('secondary', 'ultralight', 'micro');
+$secondary-font-ultralight-tiny: get-font('secondary', 'ultralight', 'tiny');
+$secondary-font-ultralight-small: get-font('secondary', 'ultralight', 'small');
+$secondary-font-ultralight-slight: get-font('secondary', 'ultralight', 'slight');
+$secondary-font-ultralight-normal: get-font('secondary', 'ultralight', 'normal');
+$secondary-font-ultralight-standard: get-font('secondary', 'ultralight', 'standard');
+$secondary-font-ultralight-medium: get-font('secondary', 'ultralight', 'medium');
+$secondary-font-ultralight-large: get-font('secondary', 'ultralight', 'large');
+$secondary-font-ultralight-big: get-font('secondary', 'ultralight', 'big');
+$secondary-font-ultralight-huge: get-font('secondary', 'ultralight', 'huge');
+$secondary-font-ultralight-colossal: get-font('secondary', 'ultralight', 'colossal');
+
+$secondary-font-light-micro: get-font('secondary', 'light', 'micro');
+$secondary-font-light-tiny: get-font('secondary', 'light', 'tiny');
+$secondary-font-light-small: get-font('secondary', 'light', 'small');
+$secondary-font-light-slight: get-font('secondary', 'light', 'slight');
+$secondary-font-light-normal: get-font('secondary', 'light', 'normal');
+$secondary-font-light-standard: get-font('secondary', 'light', 'standard');
+$secondary-font-light-medium: get-font('secondary', 'light', 'medium');
+$secondary-font-light-large: get-font('secondary', 'light', 'large');
+$secondary-font-light-big: get-font('secondary', 'light', 'big');
+$secondary-font-light-huge: get-font('secondary', 'light', 'huge');
+$secondary-font-light-colossal: get-font('secondary', 'light', 'colossal');
+
+$secondary-font-normal-micro: get-font('secondary', 'normal', 'micro');
+$secondary-font-normal-tiny: get-font('secondary', 'normal', 'tiny');
+$secondary-font-normal-small: get-font('secondary', 'normal', 'small');
+$secondary-font-normal-slight: get-font('secondary', 'normal', 'slight');
+$secondary-font-normal-normal: get-font('secondary', 'normal', 'normal');
+$secondary-font-normal-standard: get-font('secondary', 'normal', 'standard');
+$secondary-font-normal-medium: get-font('secondary', 'normal', 'medium');
+$secondary-font-normal-large: get-font('secondary', 'normal', 'large');
+$secondary-font-normal-big: get-font('secondary', 'normal', 'big');
+$secondary-font-normal-huge: get-font('secondary', 'normal', 'huge');
+$secondary-font-normal-colossal: get-font('secondary', 'normal', 'colossal');
+
+$secondary-font-regular-micro: get-font('secondary', 'regular', 'micro');
+$secondary-font-regular-tiny: get-font('secondary', 'regular', 'tiny');
+$secondary-font-regular-small: get-font('secondary', 'regular', 'small');
+$secondary-font-regular-slight: get-font('secondary', 'regular', 'slight');
+$secondary-font-regular-normal: get-font('secondary', 'regular', 'normal');
+$secondary-font-regular-standard: get-font('secondary', 'regular', 'standard');
+$secondary-font-regular-medium: get-font('secondary', 'regular', 'medium');
+$secondary-font-regular-large: get-font('secondary', 'regular', 'large');
+$secondary-font-regular-big: get-font('secondary', 'regular', 'big');
+$secondary-font-regular-huge: get-font('secondary', 'regular', 'huge');
+$secondary-font-regular-colossal: get-font('secondary', 'regular', 'colossal');
+
+$secondary-font-medium-micro: get-font('secondary', 'medium', 'micro');
+$secondary-font-medium-tiny: get-font('secondary', 'medium', 'tiny');
+$secondary-font-medium-small: get-font('secondary', 'medium', 'small');
+$secondary-font-medium-slight: get-font('secondary', 'medium', 'slight');
+$secondary-font-medium-normal: get-font('secondary', 'medium', 'normal');
+$secondary-font-medium-standard: get-font('secondary', 'medium', 'standard');
+$secondary-font-medium-medium: get-font('secondary', 'medium', 'medium');
+$secondary-font-medium-large: get-font('secondary', 'medium', 'large');
+$secondary-font-medium-big: get-font('secondary', 'medium', 'big');
+$secondary-font-medium-huge: get-font('secondary', 'medium', 'huge');
+$secondary-font-medium-colossal: get-font('secondary', 'medium', 'colossal');
+
+$secondary-font-demibold-micro: get-font('secondary', 'demibold', 'micro');
+$secondary-font-demibold-tiny: get-font('secondary', 'demibold', 'tiny');
+$secondary-font-demibold-small: get-font('secondary', 'demibold', 'small');
+$secondary-font-demibold-slight: get-font('secondary', 'demibold', 'slight');
+$secondary-font-demibold-normal: get-font('secondary', 'demibold', 'normal');
+$secondary-font-demibold-standard: get-font('secondary', 'demibold', 'standard');
+$secondary-font-demibold-medium: get-font('secondary', 'demibold', 'medium');
+$secondary-font-demibold-large: get-font('secondary', 'demibold', 'large');
+$secondary-font-demibold-big: get-font('secondary', 'demibold', 'big');
+$secondary-font-demibold-huge: get-font('secondary', 'demibold', 'huge');
+$secondary-font-demibold-colossal: get-font('secondary', 'demibold', 'colossal');
+
+$secondary-font-semibold-micro: get-font('secondary', 'semibold', 'micro');
+$secondary-font-semibold-tiny: get-font('secondary', 'semibold', 'tiny');
+$secondary-font-semibold-small: get-font('secondary', 'semibold', 'small');
+$secondary-font-semibold-slight: get-font('secondary', 'semibold', 'slight');
+$secondary-font-semibold-normal: get-font('secondary', 'semibold', 'normal');
+$secondary-font-semibold-standard: get-font('secondary', 'semibold', 'standard');
+$secondary-font-semibold-medium: get-font('secondary', 'semibold', 'medium');
+$secondary-font-semibold-large: get-font('secondary', 'semibold', 'large');
+$secondary-font-semibold-big: get-font('secondary', 'semibold', 'big');
+$secondary-font-semibold-huge: get-font('secondary', 'semibold', 'huge');
+$secondary-font-semibold-colossal: get-font('secondary', 'semibold', 'colossal');
+
+$secondary-font-bold-micro: get-font('secondary', 'bold', 'micro');
+$secondary-font-bold-tiny: get-font('secondary', 'bold', 'tiny');
+$secondary-font-bold-small: get-font('secondary', 'bold', 'small');
+$secondary-font-bold-slight: get-font('secondary', 'bold', 'slight');
+$secondary-font-bold-normal: get-font('secondary', 'bold', 'normal');
+$secondary-font-bold-standard: get-font('secondary', 'bold', 'standard');
+$secondary-font-bold-medium: get-font('secondary', 'bold', 'medium');
+$secondary-font-bold-large: get-font('secondary', 'bold', 'large');
+$secondary-font-bold-big: get-font('secondary', 'bold', 'big');
+$secondary-font-bold-huge: get-font('secondary', 'bold', 'huge');
+$secondary-font-bold-colossal: get-font('secondary', 'bold', 'colossal');
+
+$secondary-font-extrabold-micro: get-font('secondary', 'extrabold', 'micro');
+$secondary-font-extrabold-tiny: get-font('secondary', 'extrabold', 'tiny');
+$secondary-font-extrabold-small: get-font('secondary', 'extrabold', 'small');
+$secondary-font-extrabold-slight: get-font('secondary', 'extrabold', 'slight');
+$secondary-font-extrabold-normal: get-font('secondary', 'extrabold', 'normal');
+$secondary-font-extrabold-standard: get-font('secondary', 'extrabold', 'standard');
+$secondary-font-extrabold-medium: get-font('secondary', 'extrabold', 'medium');
+$secondary-font-extrabold-large: get-font('secondary', 'extrabold', 'large');
+$secondary-font-extrabold-big: get-font('secondary', 'extrabold', 'big');
+$secondary-font-extrabold-huge: get-font('secondary', 'extrabold', 'huge');
+$secondary-font-extrabold-colossal: get-font('secondary', 'extrabold', 'colossal');
+
+$secondary-font-ultrabold-micro: get-font('secondary', 'ultrabold', 'micro');
+$secondary-font-ultrabold-tiny: get-font('secondary', 'ultrabold', 'tiny');
+$secondary-font-ultrabold-small: get-font('secondary', 'ultrabold', 'small');
+$secondary-font-ultrabold-slight: get-font('secondary', 'ultrabold', 'slight');
+$secondary-font-ultrabold-normal: get-font('secondary', 'ultrabold', 'normal');
+$secondary-font-ultrabold-standard: get-font('secondary', 'ultrabold', 'standard');
+$secondary-font-ultrabold-medium: get-font('secondary', 'ultrabold', 'medium');
+$secondary-font-ultrabold-large: get-font('secondary', 'ultrabold', 'large');
+$secondary-font-ultrabold-big: get-font('secondary', 'ultrabold', 'big');
+$secondary-font-ultrabold-huge: get-font('secondary', 'ultrabold', 'huge');
+$secondary-font-ultrabold-colossal: get-font('secondary', 'ultrabold', 'colossal');
+
+
+$secondary-tight-font-thin-micro: get-font('secondary-tight', 'thin', 'micro');
+$secondary-tight-font-thin-tiny: get-font('secondary-tight', 'thin', 'tiny');
+$secondary-tight-font-thin-small: get-font('secondary-tight', 'thin', 'small');
+$secondary-tight-font-thin-slight: get-font('secondary-tight', 'thin', 'slight');
+$secondary-tight-font-thin-normal: get-font('secondary-tight', 'thin', 'normal');
+$secondary-tight-font-thin-standard: get-font('secondary-tight', 'thin', 'standard');
+$secondary-tight-font-thin-medium: get-font('secondary-tight', 'thin', 'medium');
+
+$secondary-tight-font-extralight-micro: get-font('secondary-tight', 'extralight', 'micro');
+$secondary-tight-font-extralight-tiny: get-font('secondary-tight', 'extralight', 'tiny');
+$secondary-tight-font-extralight-small: get-font('secondary-tight', 'extralight', 'small');
+$secondary-tight-font-extralight-slight: get-font('secondary-tight', 'extralight', 'slight');
+$secondary-tight-font-extralight-normal: get-font('secondary-tight', 'extralight', 'normal');
+$secondary-tight-font-extralight-standard: get-font('secondary-tight', 'extralight', 'standard');
+$secondary-tight-font-extralight-medium: get-font('secondary-tight', 'extralight', 'medium');
+
+$secondary-tight-font-ultralight-micro: get-font('secondary-tight', 'ultralight', 'micro');
+$secondary-tight-font-ultralight-tiny: get-font('secondary-tight', 'ultralight', 'tiny');
+$secondary-tight-font-ultralight-small: get-font('secondary-tight', 'ultralight', 'small');
+$secondary-tight-font-ultralight-slight: get-font('secondary-tight', 'ultralight', 'slight');
+$secondary-tight-font-ultralight-normal: get-font('secondary-tight', 'ultralight', 'normal');
+$secondary-tight-font-ultralight-standard: get-font('secondary-tight', 'ultralight', 'standard');
+$secondary-tight-font-ultralight-medium: get-font('secondary-tight', 'ultralight', 'medium');
+
+$secondary-tight-font-light-micro: get-font('secondary-tight', 'light', 'micro');
+$secondary-tight-font-light-tiny: get-font('secondary-tight', 'light', 'tiny');
+$secondary-tight-font-light-small: get-font('secondary-tight', 'light', 'small');
+$secondary-tight-font-light-slight: get-font('secondary-tight', 'light', 'slight');
+$secondary-tight-font-light-normal: get-font('secondary-tight', 'light', 'normal');
+$secondary-tight-font-light-standard: get-font('secondary-tight', 'light', 'standard');
+$secondary-tight-font-light-medium: get-font('secondary-tight', 'light', 'medium');
+
+$secondary-tight-font-normal-micro: get-font('secondary-tight', 'normal', 'micro');
+$secondary-tight-font-normal-tiny: get-font('secondary-tight', 'normal', 'tiny');
+$secondary-tight-font-normal-small: get-font('secondary-tight', 'normal', 'small');
+$secondary-tight-font-normal-slight: get-font('secondary-tight', 'normal', 'slight');
+$secondary-tight-font-normal-normal: get-font('secondary-tight', 'normal', 'normal');
+$secondary-tight-font-normal-standard: get-font('secondary-tight', 'normal', 'standard');
+$secondary-tight-font-normal-medium: get-font('secondary-tight', 'normal', 'medium');
+
+$secondary-tight-font-regular-micro: get-font('secondary-tight', 'regular', 'micro');
+$secondary-tight-font-regular-tiny: get-font('secondary-tight', 'regular', 'tiny');
+$secondary-tight-font-regular-small: get-font('secondary-tight', 'regular', 'small');
+$secondary-tight-font-regular-slight: get-font('secondary-tight', 'regular', 'slight');
+$secondary-tight-font-regular-normal: get-font('secondary-tight', 'regular', 'normal');
+$secondary-tight-font-regular-standard: get-font('secondary-tight', 'regular', 'standard');
+$secondary-tight-font-regular-medium: get-font('secondary-tight', 'regular', 'medium');
+
+$secondary-tight-font-medium-micro: get-font('secondary-tight', 'medium', 'micro');
+$secondary-tight-font-medium-tiny: get-font('secondary-tight', 'medium', 'tiny');
+$secondary-tight-font-medium-small: get-font('secondary-tight', 'medium', 'small');
+$secondary-tight-font-medium-slight: get-font('secondary-tight', 'medium', 'slight');
+$secondary-tight-font-medium-normal: get-font('secondary-tight', 'medium', 'normal');
+$secondary-tight-font-medium-standard: get-font('secondary-tight', 'medium', 'standard');
+$secondary-tight-font-medium-medium: get-font('secondary-tight', 'medium', 'medium');
+
+$secondary-tight-font-demibold-micro: get-font('secondary-tight', 'demibold', 'micro');
+$secondary-tight-font-demibold-tiny: get-font('secondary-tight', 'demibold', 'tiny');
+$secondary-tight-font-demibold-small: get-font('secondary-tight', 'demibold', 'small');
+$secondary-tight-font-demibold-slight: get-font('secondary-tight', 'demibold', 'slight');
+$secondary-tight-font-demibold-normal: get-font('secondary-tight', 'demibold', 'normal');
+$secondary-tight-font-demibold-standard: get-font('secondary-tight', 'demibold', 'standard');
+$secondary-tight-font-demibold-medium: get-font('secondary-tight', 'demibold', 'medium');
+
+$secondary-tight-font-semibold-micro: get-font('secondary-tight', 'semibold', 'micro');
+$secondary-tight-font-semibold-tiny: get-font('secondary-tight', 'semibold', 'tiny');
+$secondary-tight-font-semibold-small: get-font('secondary-tight', 'semibold', 'small');
+$secondary-tight-font-semibold-slight: get-font('secondary-tight', 'semibold', 'slight');
+$secondary-tight-font-semibold-normal: get-font('secondary-tight', 'semibold', 'normal');
+$secondary-tight-font-semibold-standard: get-font('secondary-tight', 'semibold', 'standard');
+$secondary-tight-font-semibold-medium: get-font('secondary-tight', 'semibold', 'medium');
+
+$secondary-tight-font-bold-micro: get-font('secondary-tight', 'bold', 'micro');
+$secondary-tight-font-bold-tiny: get-font('secondary-tight', 'bold', 'tiny');
+$secondary-tight-font-bold-small: get-font('secondary-tight', 'bold', 'small');
+$secondary-tight-font-bold-slight: get-font('secondary-tight', 'bold', 'slight');
+$secondary-tight-font-bold-normal: get-font('secondary-tight', 'bold', 'normal');
+$secondary-tight-font-bold-standard: get-font('secondary-tight', 'bold', 'standard');
+$secondary-tight-font-bold-medium: get-font('secondary-tight', 'bold', 'medium');
+
+$secondary-tight-font-extrabold-micro: get-font('secondary-tight', 'extrabold', 'micro');
+$secondary-tight-font-extrabold-tiny: get-font('secondary-tight', 'extrabold', 'tiny');
+$secondary-tight-font-extrabold-small: get-font('secondary-tight', 'extrabold', 'small');
+$secondary-tight-font-extrabold-slight: get-font('secondary-tight', 'extrabold', 'slight');
+$secondary-tight-font-extrabold-normal: get-font('secondary-tight', 'extrabold', 'normal');
+$secondary-tight-font-extrabold-standard: get-font('secondary-tight', 'extrabold', 'standard');
+$secondary-tight-font-extrabold-medium: get-font('secondary-tight', 'extrabold', 'medium');
+
+$secondary-tight-font-ultrabold-micro: get-font('secondary-tight', 'ultrabold', 'micro');
+$secondary-tight-font-ultrabold-tiny: get-font('secondary-tight', 'ultrabold', 'tiny');
+$secondary-tight-font-ultrabold-small: get-font('secondary-tight', 'ultrabold', 'small');
+$secondary-tight-font-ultrabold-slight: get-font('secondary-tight', 'ultrabold', 'slight');
+$secondary-tight-font-ultrabold-normal: get-font('secondary-tight', 'ultrabold', 'normal');
+$secondary-tight-font-ultrabold-standard: get-font('secondary-tight', 'ultrabold', 'standard');
+$secondary-tight-font-ultrabold-medium: get-font('secondary-tight', 'ultrabold', 'medium');
