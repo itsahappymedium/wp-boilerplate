@@ -11,6 +11,9 @@
 
   // Toggles mobile sub-navigation
   $('header .menu-item-has-children > a').click(function (e) {
+    var percentX = (e.pageX / window.innerWidth * 100)
+    if (window.innerWidth > 1250 || percentX < 90) return
+    e.preventDefault()
     var $me = $(e.currentTarget)
     var $parent = $me.parent()
     var opening = !$parent.hasClass('open')
