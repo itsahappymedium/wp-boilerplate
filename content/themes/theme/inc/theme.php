@@ -199,4 +199,19 @@ function remove_unused_user_contactmethods($methods) {
 
   return array_diff_key($methods, array_flip($unused_methods));
 }
+
+
+// Adds a chevron SVG next to menu items that have children
+add_filter('walker_nav_menu_start_el', 'hm_nav_add_chevron_to_submenus', 10, 2);
+function hm_nav_add_chevron_to_submenus($item_output, $menu_item) {
+  if (in_array('menu-item-has-children', $menu_item->classes)) {
+    $split_pos = strrpos($item_output, '</a>');
+    $first_part = substr($item_output, 0, $split_pos);
+    $last_part = substr($item_output, $split_pos);
+    $chevron = get_svg('chevron');
+    $item_output = $first_part . $chevron . $last_part;
+  }
+
+  return $item_output;
+}
 ?>

@@ -148,7 +148,7 @@ header {
         position: relative;
       }
 
-      > .menu-item {
+      > .menu-item:not(.menu-item-btn) {
         display: block;
 
         @include media('<#{$header-mobile-nav-breakpoint}') {
@@ -218,6 +218,22 @@ header {
               fill: $text-primary;
             }
           }
+        }
+      }
+
+      > .menu-item-btn {
+        @include media('<#{$header-mobile-nav-breakpoint}') {
+          margin-top: 16px;
+        }
+
+        @include media('>=#{$header-mobile-nav-breakpoint}') {
+          margin-left: 8px;
+        }
+
+        > a {
+          @extend .btn;
+
+          text-transform: none;
         }
       }
     }
