@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section>
+<section class="page-heading">
   <div class="container">
     <h1 class="page-title"><?php the_title(); ?></h1>
 
