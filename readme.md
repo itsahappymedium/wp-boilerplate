@@ -1,4 +1,4 @@
-# ![Happy Medium](content/themes/theme/img/favicon.png) Happy Medium's WordPress Boilerplate
+# ![Happy Medium](content/themes/theme/img/svg/logo.svg) Happy Medium's WordPress Boilerplate
 
 A simple, yet robust boilerplate for a new WordPress site.
 
