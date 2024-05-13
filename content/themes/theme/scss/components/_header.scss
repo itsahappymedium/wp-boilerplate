@@ -90,48 +90,6 @@ header {
       }
     }
 
-    .menu,
-    .sub-menu {
-      .menu-item {
-        position: relative;
-
-        @include media('<#{$header-mobile-nav-breakpoint}') {
-          &.open {
-            > a {
-              .chevron {
-                transform: translateY(-50%) rotate(180deg);
-              }
-            }
-          }
-        }
-
-        @include media('>=#{$header-mobile-nav-breakpoint}') {
-          &.open,
-          &:hover {
-            > a {
-              .chevron {
-                transform: rotate(180deg);
-              }
-            }
-          }
-        }
-
-        &.open {
-          > .sub-menu {
-            display: block;
-          }
-        }
-
-        &:hover {
-          @include media('>=#{$header-mobile-nav-breakpoint}') {
-            > .sub-menu {
-              display: block;
-            }
-          }
-        }
-      }
-    }
-
     .menu {
       @include media('<tablet') {
         margin: 0 $container-mobile-buffer;
@@ -277,11 +235,58 @@ header {
         }
       }
     }
+
+    .menu,
+    .sub-menu {
+      .menu-item {
+        position: relative;
+
+        @include media('<#{$header-mobile-nav-breakpoint}') {
+          &.open {
+            > a {
+              .chevron {
+                transform: translateY(-50%) rotate(180deg);
+              }
+            }
+          }
+        }
+
+        @include media('>=#{$header-mobile-nav-breakpoint}') {
+          &.open,
+          &:hover {
+            > a {
+              .chevron {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+
+        &.open {
+          > a {
+            outline: 0;
+          }
+
+          > .sub-menu {
+            display: block;
+          }
+        }
+
+        &:hover {
+          @include media('>=#{$header-mobile-nav-breakpoint}') {
+            > .sub-menu {
+              display: block;
+            }
+          }
+        }
+      }
+    }
   }
 
   .header-navigation-btn {
     @extend .text-uppercase, .text-widetrack;
 
+    border-bottom: 4px solid transparent;
     color: $text-primary;
     display: block;
     font: $secondary-font-regular-tiny;
@@ -300,6 +305,8 @@ header {
     }
 
     &.open {
+      border-color: $text-special;
+
       .closed {
         display: none;
       }
