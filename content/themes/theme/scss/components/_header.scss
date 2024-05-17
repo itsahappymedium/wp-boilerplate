@@ -286,9 +286,10 @@ header {
   .header-navigation-btn {
     @extend .text-uppercase, .text-widetrack;
 
+    align-items: center;
     border-bottom: 4px solid transparent;
     color: $text-primary;
-    display: block;
+    display: flex;
     font: $secondary-font-regular-tiny;
     margin-left: auto;
     padding: $spacing-xxl $spacing-xl;
