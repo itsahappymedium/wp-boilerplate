@@ -302,7 +302,7 @@ header {
 
     img,
     svg {
-      vertical-align: text-bottom;
+      margin-left: 6px;
     }
 
     &.open {
@@ -315,7 +315,7 @@ header {
       svg {
         path,
         rect {
-          stroke: $text-primary;
+          stroke: $text-special;
         }
       }
     }
