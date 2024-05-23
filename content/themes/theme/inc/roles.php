@@ -152,7 +152,7 @@ function hide_wp_update_notification() {
 // Removes some subpages for users who don't need them
 add_action('admin_menu', 'remove_unneeded_subpages');
 function remove_unneeded_subpages() {
-  if (!current_user_can('edit_themes')) {
+  if (!current_user_can('switch_themes')) {
     $theme_customizer_url = add_query_arg(
       'return',
       urlencode(remove_query_arg(wp_removable_query_args(), wp_unslash($_SERVER['REQUEST_URI']))),
