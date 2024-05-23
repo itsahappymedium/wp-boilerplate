@@ -1,3 +1,6 @@
+// Stores are nice-select instances so we can reference them later
+var niceSelectInstances = {};
+
 (function ($) {
 
   // Toggles mobile navigation
@@ -19,6 +22,24 @@
     var opening = !$parent.hasClass('open')
     $parent.toggleClass('open', opening)
   })
+
+
+  // Initializes nice-select2 - Used for select inputs - https://github.com/bluzky/nice-select2
+  function initializeNiceSelect (element) {
+    $(element || 'select:not(.not-nice)').each(function (idx, select) {
+      var niceSelectInstance = NiceSelect.bind(select, {
+        placeholder: select.dataset.placeholder,
+        searchable: Object.keys(select.dataset).includes('searchable'),
+        searchtext: select.dataset.searchtext,
+        selectedtext: select.dataset.selectedtext
+      })
+
+      if (select.id) {
+        niceSelectInstances[select.id] = niceSelectInstance
+      }
+    })
+  }
+  initializeNiceSelect()
 
 
   // Makes the footer stay at the bottom of the page

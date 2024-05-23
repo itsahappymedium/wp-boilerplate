@@ -9,11 +9,13 @@
     },
     "js": {
       "js/scripts.min.js": [
+        "gpm_modules/bluzky/nice-select2/dist/js/nice-select2.js",
         "js/src/*.js"
       ]
     }
   },
   "dependencies": {
+    "bluzky/nice-select2": "2.1.0",
     "eduardoboucas/include-media": "1.4.10",
     "wordpress/wordpress-core.css": "https://gist.github.com/kodie/d7da9f3db934adea8e44ee38d1885bf8/archive/aaf369827720c564ec3b6c43cba8b00748dbd73d.zip"
   },

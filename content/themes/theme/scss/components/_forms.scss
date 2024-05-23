@@ -90,3 +90,80 @@ label {
     visibility: hidden;
   }
 }
+
+// This fixes a small iPhone-specific bug with nice-select2 where the hidden
+// select field would take up space even though it's width is set to 0
+// (We use the .not-nice class for any select elements that we don't want nice-select2 applied on)
+// GitHub Issue: https://github.com/bluzky/nice-select2/issues/73
+select:not(.not-nice) {
+  font-size: 0;
+}
+
+.nice-select {
+  background-color: $color-brand-white;
+  border: 1px solid $text-highlight;
+  border-radius: 0;
+  box-sizing: content-box;
+  height: 48px;
+  line-height: 48px;
+  min-width: 312px;
+  padding-left: 12px;
+
+  &.open {
+    border-bottom: 0;
+
+    .nice-select-dropdown {
+      border-top: 0;
+    }
+  }
+
+  &.error {
+    &, .nice-select-dropdown {
+      border-color: $text-error;
+    }
+  }
+
+  .current {
+    color: $text-primary;
+    font: $secondary-tight-font-regular-small;
+  }
+
+  .nice-select-dropdown {
+    background-color: $color-brand-white;
+    border: 1px solid $border-focus;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: content-box !important;
+    left: -1px;
+    margin-top: -1px;
+    width: 100%;
+
+    .list {
+      border-radius: 0;
+      margin: 0;
+
+      .option {
+        background-color: $color-brand-white;
+        color: $text-primary;
+        font: $secondary-tight-font-regular-small;
+        padding: 12px;
+
+        &.focus,
+        &:hover:not(.disabled) {
+          background-color: $surface-tertiary !important;
+          color: $text-primary;
+        }
+
+        &.selected {
+          background-color: $surface-secondary !important;
+          color: $text-darkmode;
+        }
+
+        &.disabled {
+          background-color: $color-brand-white;
+          color: $text-highlight;
+        }
+      }
+    }
+  }
+}
