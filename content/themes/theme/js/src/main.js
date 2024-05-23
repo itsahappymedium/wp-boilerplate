@@ -1,4 +1,4 @@
-// Stores are nice-select instances so we can reference them later
+// Stores nice-select instances so we can reference them later
 var niceSelectInstances = {};
 
 (function ($) {
