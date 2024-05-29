@@ -83,12 +83,6 @@ textarea {
 label {
   color: $text-primary;
   font: $primary-font-semibold-small;
-
-  // Hides the "(Required)" text from Gravity Forms labels
-  .gfield_required {
-    display: none;
-    visibility: hidden;
-  }
 }
 
 // This fixes a small iPhone-specific bug with nice-select2 where the hidden
