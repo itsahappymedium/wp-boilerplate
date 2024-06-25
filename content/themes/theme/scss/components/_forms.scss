@@ -94,7 +94,7 @@ select:not(.not-nice) {
 }
 
 .nice-select {
-  background-color: $color-brand-white;
+  background-color: $white;
   border: 1px solid $text-highlight;
   border-radius: 0;
   box-sizing: content-box;
@@ -123,7 +123,7 @@ select:not(.not-nice) {
   }
 
   .nice-select-dropdown {
-    background-color: $color-brand-white;
+    background-color: $white;
     border: 1px solid $border-focus;
     border-radius: 0;
     box-shadow: none;
@@ -137,7 +137,7 @@ select:not(.not-nice) {
       margin: 0;
 
       .option {
-        background-color: $color-brand-white;
+        background-color: $white;
         color: $text-primary;
         font: $secondary-tight-font-regular-small;
         padding: 12px;
@@ -154,7 +154,7 @@ select:not(.not-nice) {
         }
 
         &.disabled {
-          background-color: $color-brand-white;
+          background-color: $white;
           color: $text-highlight;
         }
       }
