@@ -62,12 +62,12 @@ function hm_custom_roles() {
     'view_site_health_checks' => false,
 
     // Gravity Forms
-    'gravityforms_create_form'      => false,
+    'gravityforms_create_form'      => true,
     'gravityforms_delete_entries'   => true,
-    'gravityforms_delete_forms'     => false,
+    'gravityforms_delete_forms'     => true,
     'gravityforms_edit_entries'     => true,
     'gravityforms_edit_entry_notes' => true,
-    'gravityforms_edit_forms'       => false,
+    'gravityforms_edit_forms'       => true,
     'gravityforms_edit_settings'    => false,
     'gravityforms_export_entries'   => true,
     'gravityforms_feed'             => true,
@@ -159,9 +159,10 @@ function remove_unneeded_subpages() {
       'customize.php'
     );
 
-    remove_submenu_page('themes.php', $theme_customizer_url); // Theme customization
-    remove_submenu_page('themes.php', 'themes.php');          // Theme selection
-    remove_submenu_page('themes.php', 'widgets.php');         // Theme widgets
+    remove_submenu_page('themes.php', $theme_customizer_url);         // Theme customization
+    remove_submenu_page('themes.php', 'themes.php');                  // Theme selection
+    remove_submenu_page('themes.php', 'widgets.php');                 // Theme widgets
+    remove_submenu_page('themes.php', 'edit.php?post_type=wp_block'); // Theme patterns
   }
 }
 ?>
